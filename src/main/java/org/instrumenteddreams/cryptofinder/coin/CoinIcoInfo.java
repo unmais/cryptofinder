@@ -4,64 +4,64 @@ import com.litesoftwares.coingecko.domain.Coins.CoinData.Links_;
 
 public interface CoinIcoInfo {
 
-    String getAcceptingCurrencies();
+	String getAcceptingCurrencies();
 
-    Object getAmountForSale();
+	Object getAmountForSale();
 
-    Object getBasePreSaleAmount();
+	Object getBasePreSaleAmount();
 
-    String getBasePublicSaleAmount();
+	String getBasePublicSaleAmount();
 
-    String getBountyDetailUrl();
+	String getBountyDetailUrl();
 
-    String getCountryOrigin();
+	String getCountryOrigin();
 
-    String getDescription();
+	String getDescription();
 
-    Object getHardcapAmount();
+	Object getHardcapAmount();
 
-    String getHardcapCurrency();
+	String getHardcapCurrency();
 
-    String getIcoEndDate();
+	String getIcoEndDate();
 
-    String getIcoStartDate();
+	String getIcoStartDate();
 
-    Links_ getLinks();
+	Links_ getLinks();
 
-    Object getPreSaleAvailable();
+	Object getPreSaleAvailable();
 
-    Object getPreSaleEndDate();
+	Object getPreSaleEndDate();
 
-    Object getPreSaleStartDate();
+	Object getPreSaleStartDate();
 
-    Object getQuotePreSaleAmount();
+	Object getQuotePreSaleAmount();
 
-    String getQuotePreSaleCurrency();
+	String getQuotePreSaleCurrency();
 
-    String getQuotePublicSaleAmount();
+	String getQuotePublicSaleAmount();
 
-    String getQuotePublicSaleCurrency();
+	String getQuotePublicSaleCurrency();
 
-    String getShortDesc();
+	String getShortDesc();
 
-    Object getSoftcapAmount();
+	Object getSoftcapAmount();
 
-    String getSoftcapCurrency();
+	String getSoftcapCurrency();
 
-    Object getTotalRaised();
+	Object getTotalRaised();
 
-    String getTotalRaisedCurrency();
+	String getTotalRaisedCurrency();
 
-    Object getWhitelistAvailable();
+	Object getWhitelistAvailable();
 
-    Object getWhitelistEndDate();
+	Object getWhitelistEndDate();
 
-    Object getWhitelistStartDate();
+	Object getWhitelistStartDate();
 
-    String getWhitelistUrl();
+	String getWhitelistUrl();
 
-    boolean isKycRequired();
+	boolean isKycRequired();
 
-    boolean isPreSaleEnded();
+	boolean isPreSaleEnded();
 
 }

@@ -4,24 +4,24 @@ import java.util.List;
 
 public interface CoinChartInfo {
 
-    public interface OhlcSampleInfo {
+	public interface OhlcSampleInfo {
 
-	long getEpochTime();
+		long getEpochTime();
 
-	double getOpen();
+		double getOpen();
 
-	double getHigh();
+		double getHigh();
 
-	double getLow();
+		double getLow();
 
-	double getClose();
+		double getClose();
 
-	double getCloseVolume();
+		double getCloseVolume();
 
-	double getCloseMarketCap();
+		double getCloseMarketCap();
 
-    }
+	}
 
-    List<OhlcSampleInfo> getOhlcInfos();
+	List<OhlcSampleInfo> getOhlcInfos();
 
 }

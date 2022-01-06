@@ -2,30 +2,30 @@ package org.instrumenteddreams.cryptofinder.coin;
 
 public class CoinTwitterState {
 
-    private String twitterName;
-    private int numberOfFollowers;
-    private int numberOfFollowersInLast30Days;
+	private String twitterName;
+	private int numberOfFollowers;
+	private int numberOfFollowersInLast30Days;
 
-    public CoinTwitterState(String twitterName, int numberOfFollowers, int numberOfFollowersInLast30Days) {
+	public CoinTwitterState(String twitterName, int numberOfFollowers, int numberOfFollowersInLast30Days) {
 
-	this.twitterName = twitterName;
-	this.numberOfFollowers = numberOfFollowers;
-	this.numberOfFollowersInLast30Days = numberOfFollowersInLast30Days;
-    }
+		this.twitterName = twitterName;
+		this.numberOfFollowers = numberOfFollowers;
+		this.numberOfFollowersInLast30Days = numberOfFollowersInLast30Days;
+	}
 
-    public String getTwitterName() {
+	public String getTwitterName() {
 
-	return twitterName;
-    }
+		return twitterName;
+	}
 
-    public int getNumberOfFollowers() {
+	public int getNumberOfFollowers() {
 
-	return numberOfFollowers;
-    }
+		return numberOfFollowers;
+	}
 
-    public int getNumberOfFollowersInLast30Days() {
+	public int getNumberOfFollowersInLast30Days() {
 
-	return numberOfFollowersInLast30Days;
-    }
+		return numberOfFollowersInLast30Days;
+	}
 
 }

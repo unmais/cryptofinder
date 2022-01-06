@@ -8,62 +8,62 @@ import com.litesoftwares.coingecko.domain.Shared.Ticker;
 
 public interface CoinOverallInfo {
 
-    List<String> getAdditionalNotices();
+	List<String> getAdditionalNotices();
 
-    String getAssetPlatformId();
+	String getAssetPlatformId();
 
-    long getBlockTimeInMinutes();
+	long getBlockTimeInMinutes();
 
-    List<Object> getCategories();
+	List<Object> getCategories();
 
-    long getCoingeckoRank();
+	long getCoingeckoRank();
 
-    double getCoingeckoScore();
+	double getCoingeckoScore();
 
-    CoinCommunityInfo getCommunityInfo();
+	CoinCommunityInfo getCommunityInfo();
 
-    double getCommunityScore();
+	double getCommunityScore();
 
-    String getContractAddress();
+	String getContractAddress();
 
-    String getCountryOrigin();
+	String getCountryOrigin();
 
-    Map<String, String> getDescription();
+	Map<String, String> getDescription();
 
-    CoinDeveloperInfo getDeveloperInfo();
+	CoinDeveloperInfo getDeveloperInfo();
 
-    double getDeveloperScore();
+	double getDeveloperScore();
 
-    String getGenesisDate();
+	String getGenesisDate();
 
-    String getHashingAlgorithm();
+	String getHashingAlgorithm();
 
-    CoinIcoInfo getIcoInfo();
+	CoinIcoInfo getIcoInfo();
 
-    CoinPicture getPicture();
+	CoinPicture getPicture();
 
-    CoinResources getResources();
+	CoinResources getResources();
 
-    double getLiquidityScore();
+	double getLiquidityScore();
 
-    Map<String, String> getLocalization();
+	Map<String, String> getLocalization();
 
-    MarketData getMarketData();
+	MarketData getMarketData();
 
-    Map<String, String> getPlatforms();
+	Map<String, String> getPlatforms();
 
-    double getPublicInterestScore();
+	double getPublicInterestScore();
 
-    CoinOtherScores getOtherScores();
+	CoinOtherScores getOtherScores();
 
-    String getPublicNotice();
+	String getPublicNotice();
 
-    double getSentimentVotesDownPercentage();
+	double getSentimentVotesDownPercentage();
 
-    double getSentimentVotesUpPercentage();
+	double getSentimentVotesUpPercentage();
 
-    List<Object> getStatusUpdates();
+	List<Object> getStatusUpdates();
 
-    List<Ticker> getTickers();
+	List<Ticker> getTickers();
 
 }

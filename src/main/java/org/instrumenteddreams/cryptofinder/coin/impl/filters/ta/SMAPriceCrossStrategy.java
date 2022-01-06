@@ -8,31 +8,31 @@ import org.instrumenteddreams.cryptofinder.coin.impl.filters.FilterStrategy;
 
 public class SMAPriceCrossStrategy implements FilterStrategy {
 
-    private static final String COIN_BAR_CHART_NAME_SUFFIX = "_bar_chart";
+	private static final String COIN_BAR_CHART_NAME_SUFFIX = "_bar_chart";
 
-    @Override
-    public Info getInfoRequirementsForFiltersOfOrder(int order) {
+	@Override
+	public Info getInfoRequirementsForFiltersOfOrder(int order) {
 
-	if (order == 2) {
-	    return Coin.Info.CHART_OLHC_INFO_180D;
+		if (order == 2) {
+			return Coin.Info.CHART_OLHC_INFO_180D;
+		}
+
+		return Coin.Info.NONE;
 	}
 
-	return Coin.Info.NONE;
-    }
+	@Override
+	public Predicate<Coin> getFiltersOfOrder(int order) {
 
-    @Override
-    public Predicate<Coin> getFiltersOfOrder(int order) {
+		if (order == 2) {
+			return coin -> isPassingOrder2Filters(coin);
+		}
 
-	if (order == 2) {
-	    return coin -> isPassingOrder2Filters(coin);
+		return coin -> true;
 	}
 
-	return coin -> true;
-    }
+	private boolean isPassingOrder2Filters(Coin coin) {
 
-    private boolean isPassingOrder2Filters(Coin coin) {
-
-	throw new UnsupportedOperationException();
+		throw new UnsupportedOperationException();
 //	BarSeries series = new BaseBarSeriesBuilder().withName(coin.getId() + COIN_BAR_CHART_NAME_SUFFIX).build();
 //
 //	for (OhlcSampleInfo ohlcSample : coin.getCoinChartInfo().getOhlcInfos()) {
@@ -45,6 +45,6 @@ public class SMAPriceCrossStrategy implements FilterStrategy {
 //	System.out.println(
 //		"10-ticks-SMA value at the last index: " + shortSma.getValue(series.getEndIndex()).doubleValue());
 //	return true;
-    }
+	}
 
 }

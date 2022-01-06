@@ -27,56 +27,56 @@ import com.google.common.collect.Lists;
  */
 public class CryptoFinder {
 
-    private static final CoinOracle coinOracle = CoinOracles.getDefault();
-    private static final CoinVisualizer coinVisualizer = CoinVisualizers.getDefault();
-    private static final FilterStrategy filterStrategy = new AltcoinTraderFilterStrategy();
+	private static final CoinOracle coinOracle = CoinOracles.getDefault();
+	private static final CoinVisualizer coinVisualizer = CoinVisualizers.getDefault();
+	private static final FilterStrategy filterStrategy = new AltcoinTraderFilterStrategy();
 
-    public static void main(String[] args) throws InterruptedException {
+	public static void main(String[] args) throws InterruptedException {
 
-	List<Coin> order1SelectedCoins = Lists.newArrayList();
+		List<Coin> order1SelectedCoins = Lists.newArrayList();
 
-	Predicate<Coin> order1Filters = filterStrategy.getFiltersOfOrder(1);
-	Coin.Info order1requiredInfo = filterStrategy.getInfoRequirementsForFiltersOfOrder(1);
+		Predicate<Coin> order1Filters = filterStrategy.getFiltersOfOrder(1);
+		Coin.Info order1requiredInfo = filterStrategy.getInfoRequirementsForFiltersOfOrder(1);
 
-	Predicate<Coin> order2Filters = filterStrategy.getFiltersOfOrder(2);
-	Coin.Info order2requiredInfo = filterStrategy.getInfoRequirementsForFiltersOfOrder(2);
+		Predicate<Coin> order2Filters = filterStrategy.getFiltersOfOrder(2);
+		Coin.Info order2requiredInfo = filterStrategy.getInfoRequirementsForFiltersOfOrder(2);
 
-	coinOracle.start();
-	List<CoinBasicInfo> pageCoinInfos = Lists.newArrayList();
-	int pageNumber = 1;
-	do {
-	    pageCoinInfos.clear();
-	    pageCoinInfos = coinOracle.getCoinBasicInfos(pageNumber);
-	    System.out.println("fetched " + pageCoinInfos.size() + " coins from page #" + pageNumber);
+		coinOracle.start();
+		List<CoinBasicInfo> pageCoinInfos = Lists.newArrayList();
+		int pageNumber = 1;
+		do {
+			pageCoinInfos.clear();
+			pageCoinInfos = coinOracle.getCoinBasicInfos(pageNumber);
+			System.out.println("fetched " + pageCoinInfos.size() + " coins from page #" + pageNumber);
 
-	    List<Coin> selectedPageCoins = pageCoinInfos.stream().map(info -> CoinFactory.buildCoin(info))
-		    .map(coin -> coinOracle.completeCoinInfo(coin, order1requiredInfo)).filter(order1Filters).toList();
+			List<Coin> selectedPageCoins = pageCoinInfos.stream().map(info -> CoinFactory.buildCoin(info))
+					.map(coin -> coinOracle.completeCoinInfo(coin, order1requiredInfo)).filter(order1Filters).toList();
 
-	    if (!selectedPageCoins.isEmpty()) {
-		System.out.println(">> order-1 filters got " + selectedPageCoins.size() + " coins from this page");
-		order1SelectedCoins.addAll(selectedPageCoins);
-	    }
+			if (!selectedPageCoins.isEmpty()) {
+				System.out.println(">> order-1 filters got " + selectedPageCoins.size() + " coins from this page");
+				order1SelectedCoins.addAll(selectedPageCoins);
+			}
 
-	    pageNumber = pageNumber + 1;
-	} while (pageCoinInfos.size() == coinOracle.getDefaultPageSize());
+			pageNumber = pageNumber + 1;
+		} while (pageCoinInfos.size() == coinOracle.getDefaultPageSize());
 
-	System.out.println("result: order-1 filters got " + order1SelectedCoins.size() + " coins");
+		System.out.println("result: order-1 filters got " + order1SelectedCoins.size() + " coins");
 
-	if (!order1SelectedCoins.isEmpty()) {
+		if (!order1SelectedCoins.isEmpty()) {
 
-	    System.out.println("applying order-2 filters...");
+			System.out.println("applying order-2 filters...");
 
-	    List<Coin> order2SelectedCoins = order1SelectedCoins.stream()
-		    .map(coin -> coinOracle.completeCoinInfo(coin, order2requiredInfo)).filter(order2Filters).toList();
+			List<Coin> order2SelectedCoins = order1SelectedCoins.stream()
+					.map(coin -> coinOracle.completeCoinInfo(coin, order2requiredInfo)).filter(order2Filters).toList();
 
-	    System.out.println("result: order-2 filters got " + order2SelectedCoins.size() + " coins");
+			System.out.println("result: order-2 filters got " + order2SelectedCoins.size() + " coins");
 
-	    if (!order2SelectedCoins.isEmpty()) {
-		coinVisualizer.start();
-		order2SelectedCoins.stream().forEach(coin -> coinVisualizer.visualize(coin));
-	    }
+			if (!order2SelectedCoins.isEmpty()) {
+				coinVisualizer.start();
+				order2SelectedCoins.stream().forEach(coin -> coinVisualizer.visualize(coin));
+			}
+		}
+
 	}
-
-    }
 
 }

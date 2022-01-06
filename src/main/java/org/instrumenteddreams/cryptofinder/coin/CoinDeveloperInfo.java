@@ -6,24 +6,24 @@ import com.litesoftwares.coingecko.domain.Coins.CoinData.CodeAdditionsDeletions4
 
 public interface CoinDeveloperInfo {
 
-    long getClosedIssues();
+	long getClosedIssues();
 
-    CodeAdditionsDeletions4Weeks getCodeAdditionsDeletions4Weeks();
+	CodeAdditionsDeletions4Weeks getCodeAdditionsDeletions4Weeks();
 
-    long getCommitCount4Weeks();
+	long getCommitCount4Weeks();
 
-    long getForks();
+	long getForks();
 
-    List<Long> getLast4WeeksCommitActivitySeries();
+	List<Long> getLast4WeeksCommitActivitySeries();
 
-    long getPullRequestContributors();
+	long getPullRequestContributors();
 
-    long getPullRequestsMerged();
+	long getPullRequestsMerged();
 
-    long getStars();
+	long getStars();
 
-    long getSubscribers();
+	long getSubscribers();
 
-    long getTotalIssues();
+	long getTotalIssues();
 
 }

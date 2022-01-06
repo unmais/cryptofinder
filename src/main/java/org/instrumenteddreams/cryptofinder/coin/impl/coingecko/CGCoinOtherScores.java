@@ -6,38 +6,38 @@ import com.litesoftwares.coingecko.domain.Coins.CoinData.PublicInterestStats;
 
 public class CGCoinOtherScores implements CoinOtherScores {
 
-    private final PublicInterestStats delegate;
+	private final PublicInterestStats delegate;
 
-    public CGCoinOtherScores(PublicInterestStats delegate) {
+	public CGCoinOtherScores(PublicInterestStats delegate) {
 
-	this.delegate = delegate;
-    }
+		this.delegate = delegate;
+	}
 
-    public boolean equals(Object o) {
+	public boolean equals(Object o) {
 
-	return delegate.equals(o);
-    }
+		return delegate.equals(o);
+	}
 
-    @Override
-    public long getAlexaRank() {
+	@Override
+	public long getAlexaRank() {
 
-	return delegate.getAlexaRank();
-    }
+		return delegate.getAlexaRank();
+	}
 
-    @Override
-    public long getBingMatches() {
+	@Override
+	public long getBingMatches() {
 
-	return delegate.getBingMatches();
-    }
+		return delegate.getBingMatches();
+	}
 
-    public int hashCode() {
+	public int hashCode() {
 
-	return delegate.hashCode();
-    }
+		return delegate.hashCode();
+	}
 
-    public String toString() {
+	public String toString() {
 
-	return delegate.toString();
-    }
+		return delegate.toString();
+	}
 
 }

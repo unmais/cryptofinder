@@ -12,66 +12,66 @@ import com.litesoftwares.coingecko.domain.Coins.OhlcSample;
 
 public class CGCoinChartInfo implements CoinChartInfo {
 
-    private static final int OHLC_DATA_PERIOD_IN_DAYS = 4;
+	private static final int OHLC_DATA_PERIOD_IN_DAYS = 4;
 
-    private MarketChart chartInfoDelegate;
+	private MarketChart chartInfoDelegate;
 
-    private List<OhlcSampleInfo> ohlcInfos;
+	private List<OhlcSampleInfo> ohlcInfos;
 
-    public static CGCoinChartInfo fromChartData(MarketChart chartInfoDelegate, OhlcSample[] ohlcSamples, int days) {
+	public static CGCoinChartInfo fromChartData(MarketChart chartInfoDelegate, OhlcSample[] ohlcSamples, int days) {
 
-	int numberOfOhlcs = ohlcSamples.length;
+		int numberOfOhlcs = ohlcSamples.length;
 
-	List<OhlcSampleInfo> ohlcInfos = Lists.newArrayList(numberOfOhlcs);
+		List<OhlcSampleInfo> ohlcInfos = Lists.newArrayList(numberOfOhlcs);
 
-	int indexOfFirstOhlcInChar = findFirstTimeOccurrenceIndex(ohlcSamples[0].getTime(),
-		chartInfoDelegate.getPrices(), OHLC_DATA_PERIOD_IN_DAYS);
+		int indexOfFirstOhlcInChar = findFirstTimeOccurrenceIndex(ohlcSamples[0].getTime(),
+				chartInfoDelegate.getPrices(), OHLC_DATA_PERIOD_IN_DAYS);
 
-	for (int i = 0; i < ohlcSamples.length; i++) {
-	    List<String> closingCap = chartInfoDelegate.getMarketCaps().get(i + indexOfFirstOhlcInChar);
-	    List<String> closingVolume = chartInfoDelegate.getTotalVolumes().get(i + indexOfFirstOhlcInChar);
-	    ohlcInfos.add(i, buildOhlcInfo(ohlcSamples[i], closingCap, closingVolume));
+		for (int i = 0; i < ohlcSamples.length; i++) {
+			List<String> closingCap = chartInfoDelegate.getMarketCaps().get(i + indexOfFirstOhlcInChar);
+			List<String> closingVolume = chartInfoDelegate.getTotalVolumes().get(i + indexOfFirstOhlcInChar);
+			ohlcInfos.add(i, buildOhlcInfo(ohlcSamples[i], closingCap, closingVolume));
+		}
+
+		return new CGCoinChartInfo(ohlcInfos);
 	}
 
-	return new CGCoinChartInfo(ohlcInfos);
-    }
+	@Override
+	public int hashCode() {
 
-    @Override
-    public int hashCode() {
-
-	return Objects.hash(chartInfoDelegate, ohlcInfos);
-    }
-
-    @Override
-    public List<OhlcSampleInfo> getOhlcInfos() {
-
-	return ohlcInfos;
-    }
-
-    private CGCoinChartInfo(List<OhlcSampleInfo> ohlcInfos) {
-
-	this.ohlcInfos = ohlcInfos;
-    }
-
-    private static OhlcSampleInfoImpl buildOhlcInfo(OhlcSample ohlcSample, List<String> closingCap,
-	    List<String> closingVolume) {
-
-	return new OhlcSampleInfoImpl(Long.valueOf(ohlcSample.getTime()), Double.valueOf(ohlcSample.getOpen()),
-		Double.valueOf(ohlcSample.getHigh()), Double.valueOf(ohlcSample.getLow()),
-		Double.valueOf(ohlcSample.getClose()), Double.valueOf(closingCap.get(1)),
-		Double.valueOf(closingVolume.get(1)));
-    }
-
-    private static int findFirstTimeOccurrenceIndex(String time, List<List<String>> prices, int maxIndex) {
-
-	for (int i = 0; i < maxIndex; i++) {
-	    String priceTime = prices.get(i).get(0);
-	    if (priceTime.equals(time)) {
-		return i;
-	    }
+		return Objects.hash(chartInfoDelegate, ohlcInfos);
 	}
-	throw new IllegalArgumentException(
-		"date " + time + "not found in first " + OHLC_DATA_PERIOD_IN_DAYS + " prices");
-    }
+
+	@Override
+	public List<OhlcSampleInfo> getOhlcInfos() {
+
+		return ohlcInfos;
+	}
+
+	private CGCoinChartInfo(List<OhlcSampleInfo> ohlcInfos) {
+
+		this.ohlcInfos = ohlcInfos;
+	}
+
+	private static OhlcSampleInfoImpl buildOhlcInfo(OhlcSample ohlcSample, List<String> closingCap,
+			List<String> closingVolume) {
+
+		return new OhlcSampleInfoImpl(Long.valueOf(ohlcSample.getTime()), Double.valueOf(ohlcSample.getOpen()),
+				Double.valueOf(ohlcSample.getHigh()), Double.valueOf(ohlcSample.getLow()),
+				Double.valueOf(ohlcSample.getClose()), Double.valueOf(closingCap.get(1)),
+				Double.valueOf(closingVolume.get(1)));
+	}
+
+	private static int findFirstTimeOccurrenceIndex(String time, List<List<String>> prices, int maxIndex) {
+
+		for (int i = 0; i < maxIndex; i++) {
+			String priceTime = prices.get(i).get(0);
+			if (priceTime.equals(time)) {
+				return i;
+			}
+		}
+		throw new IllegalArgumentException(
+				"date " + time + "not found in first " + OHLC_DATA_PERIOD_IN_DAYS + " prices");
+	}
 
 }

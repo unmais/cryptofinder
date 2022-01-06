@@ -7,34 +7,34 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 
 public class SeleniumBrowserVisualizer implements CoinVisualizer {
 
-    public final String baseUrl;
+	public final String baseUrl;
 
-    private FirefoxDriver webDriver;
+	private FirefoxDriver webDriver;
 
-    public SeleniumBrowserVisualizer(String baseUrl) {
+	public SeleniumBrowserVisualizer(String baseUrl) {
 
-	this.baseUrl = baseUrl;
-    }
+		this.baseUrl = baseUrl;
+	}
 
-    @Override
-    public void start() {
+	@Override
+	public void start() {
 
-	System.setProperty("webdriver.gecko.driver", "C:\\installed\\selenium\\webdrivers\\gecko\\geckodriver.exe");
-	System.setProperty("webdriver.firefox.bin", "C:\\installed\\Waterfox\\waterfox.exe");
-	webDriver = new FirefoxDriver();
-    }
+		System.setProperty("webdriver.gecko.driver", "C:\\installed\\selenium\\webdrivers\\gecko\\geckodriver.exe");
+		System.setProperty("webdriver.firefox.bin", "C:\\installed\\Waterfox\\waterfox.exe");
+		webDriver = new FirefoxDriver();
+	}
 
-    @Override
-    public void visualize(Coin coin) {
+	@Override
+	public void visualize(Coin coin) {
 
-	openCoinInBrowser(coin.getId());
-    }
+		openCoinInBrowser(coin.getId());
+	}
 
-    private void openCoinInBrowser(String coin) {
+	private void openCoinInBrowser(String coin) {
 
-	System.out.println("opening browser tab for: " + coin);
-	String coinUrl = baseUrl + coin;
-	((JavascriptExecutor) webDriver).executeScript("window.open(\"" + coinUrl + "\")");
-    }
+		System.out.println("opening browser tab for: " + coin);
+		String coinUrl = baseUrl + coin;
+		((JavascriptExecutor) webDriver).executeScript("window.open(\"" + coinUrl + "\")");
+	}
 
 }

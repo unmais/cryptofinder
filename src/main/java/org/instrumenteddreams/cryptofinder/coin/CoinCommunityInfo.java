@@ -2,18 +2,18 @@ package org.instrumenteddreams.cryptofinder.coin;
 
 public interface CoinCommunityInfo {
 
-    long getFacebookLikes();
+	long getFacebookLikes();
 
-    double getRedditAccountsActive48h();
+	double getRedditAccountsActive48h();
 
-    double getRedditAverageComments48h();
+	double getRedditAverageComments48h();
 
-    double getRedditAveragePosts48h();
+	double getRedditAveragePosts48h();
 
-    long getRedditSubscribers();
+	long getRedditSubscribers();
 
-    long getTelegramChannelUserCount();
+	long getTelegramChannelUserCount();
 
-    long getTwitterFollowers();
+	long getTwitterFollowers();
 
 }

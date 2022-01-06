@@ -9,87 +9,87 @@ import com.litesoftwares.coingecko.domain.Coins.CoinData.DeveloperData;
 
 public class CGCoinDeveloperInfo implements CoinDeveloperInfo {
 
-    private final DeveloperData developerData;
+	private final DeveloperData developerData;
 
-    public CGCoinDeveloperInfo(DeveloperData developerData) {
+	public CGCoinDeveloperInfo(DeveloperData developerData) {
 
-	super();
-	this.developerData = developerData;
-    }
+		super();
+		this.developerData = developerData;
+	}
 
-    public boolean equals(Object o) {
+	public boolean equals(Object o) {
 
-	return developerData.equals(o);
-    }
+		return developerData.equals(o);
+	}
 
-    @Override
-    public long getClosedIssues() {
+	@Override
+	public long getClosedIssues() {
 
-	return developerData.getClosedIssues();
-    }
+		return developerData.getClosedIssues();
+	}
 
-    @Override
-    public CodeAdditionsDeletions4Weeks getCodeAdditionsDeletions4Weeks() {
+	@Override
+	public CodeAdditionsDeletions4Weeks getCodeAdditionsDeletions4Weeks() {
 
-	return developerData.getCodeAdditionsDeletions4Weeks();
-    }
+		return developerData.getCodeAdditionsDeletions4Weeks();
+	}
 
-    @Override
-    public long getCommitCount4Weeks() {
+	@Override
+	public long getCommitCount4Weeks() {
 
-	return developerData.getCommitCount4Weeks();
-    }
+		return developerData.getCommitCount4Weeks();
+	}
 
-    @Override
-    public long getForks() {
+	@Override
+	public long getForks() {
 
-	return developerData.getForks();
-    }
+		return developerData.getForks();
+	}
 
-    @Override
-    public List<Long> getLast4WeeksCommitActivitySeries() {
+	@Override
+	public List<Long> getLast4WeeksCommitActivitySeries() {
 
-	return developerData.getLast4WeeksCommitActivitySeries();
-    }
+		return developerData.getLast4WeeksCommitActivitySeries();
+	}
 
-    @Override
-    public long getPullRequestContributors() {
+	@Override
+	public long getPullRequestContributors() {
 
-	return developerData.getPullRequestContributors();
-    }
+		return developerData.getPullRequestContributors();
+	}
 
-    @Override
-    public long getPullRequestsMerged() {
+	@Override
+	public long getPullRequestsMerged() {
 
-	return developerData.getPullRequestsMerged();
-    }
+		return developerData.getPullRequestsMerged();
+	}
 
-    @Override
-    public long getStars() {
+	@Override
+	public long getStars() {
 
-	return developerData.getStars();
-    }
+		return developerData.getStars();
+	}
 
-    @Override
-    public long getSubscribers() {
+	@Override
+	public long getSubscribers() {
 
-	return developerData.getSubscribers();
-    }
+		return developerData.getSubscribers();
+	}
 
-    @Override
-    public long getTotalIssues() {
+	@Override
+	public long getTotalIssues() {
 
-	return developerData.getTotalIssues();
-    }
+		return developerData.getTotalIssues();
+	}
 
-    public int hashCode() {
+	public int hashCode() {
 
-	return developerData.hashCode();
-    }
+		return developerData.hashCode();
+	}
 
-    public String toString() {
+	public String toString() {
 
-	return developerData.toString();
-    }
+		return developerData.toString();
+	}
 
 }

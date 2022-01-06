@@ -17,197 +17,197 @@ import com.litesoftwares.coingecko.domain.Shared.Ticker;
 
 public class CGOCoinOverallInfo implements CoinOverallInfo {
 
-    private final CoinFullData delegate;
+	private final CoinFullData delegate;
 
-    public CGOCoinOverallInfo(CoinFullData delegate) {
+	public CGOCoinOverallInfo(CoinFullData delegate) {
 
-	super();
-	this.delegate = delegate;
-    }
+		super();
+		this.delegate = delegate;
+	}
 
-    public boolean equals(Object o) {
+	public boolean equals(Object o) {
 
-	return delegate.equals(o);
-    }
+		return delegate.equals(o);
+	}
 
-    public List<String> getAdditionalNotices() {
+	public List<String> getAdditionalNotices() {
 
-	return delegate.getAdditionalNotices();
-    }
+		return delegate.getAdditionalNotices();
+	}
 
-    public String getAssetPlatformId() {
+	public String getAssetPlatformId() {
 
-	return delegate.getAssetPlatformId();
-    }
+		return delegate.getAssetPlatformId();
+	}
 
-    public long getBlockTimeInMinutes() {
+	public long getBlockTimeInMinutes() {
 
-	return delegate.getBlockTimeInMinutes();
-    }
+		return delegate.getBlockTimeInMinutes();
+	}
 
-    public List<Object> getCategories() {
+	public List<Object> getCategories() {
 
-	return delegate.getCategories();
-    }
+		return delegate.getCategories();
+	}
 
-    public long getCoingeckoRank() {
+	public long getCoingeckoRank() {
 
-	return delegate.getCoingeckoRank();
-    }
+		return delegate.getCoingeckoRank();
+	}
 
-    public double getCoingeckoScore() {
+	public double getCoingeckoScore() {
 
-	return delegate.getCoingeckoScore();
-    }
+		return delegate.getCoingeckoScore();
+	}
 
-    public CoinCommunityInfo getCommunityInfo() {
+	public CoinCommunityInfo getCommunityInfo() {
 
-	return new CGCoinCommunityInfo(delegate.getCommunityData());
-    }
+		return new CGCoinCommunityInfo(delegate.getCommunityData());
+	}
 
-    public double getCommunityScore() {
+	public double getCommunityScore() {
 
-	return delegate.getCommunityScore();
-    }
+		return delegate.getCommunityScore();
+	}
 
-    public String getContractAddress() {
+	public String getContractAddress() {
 
-	return delegate.getContractAddress();
-    }
+		return delegate.getContractAddress();
+	}
 
-    public String getCountryOrigin() {
+	public String getCountryOrigin() {
 
-	return delegate.getCountryOrigin();
-    }
+		return delegate.getCountryOrigin();
+	}
 
-    public Map<String, String> getDescription() {
+	public Map<String, String> getDescription() {
 
-	return delegate.getDescription();
-    }
+		return delegate.getDescription();
+	}
 
-    public CoinDeveloperInfo getDeveloperInfo() {
+	public CoinDeveloperInfo getDeveloperInfo() {
 
-	return new CGCoinDeveloperInfo(delegate.getDeveloperData());
-    }
+		return new CGCoinDeveloperInfo(delegate.getDeveloperData());
+	}
 
-    public double getDeveloperScore() {
+	public double getDeveloperScore() {
 
-	return delegate.getDeveloperScore();
-    }
+		return delegate.getDeveloperScore();
+	}
 
-    public String getGenesisDate() {
+	public String getGenesisDate() {
 
-	return delegate.getGenesisDate();
-    }
+		return delegate.getGenesisDate();
+	}
 
-    public String getHashingAlgorithm() {
+	public String getHashingAlgorithm() {
 
-	return delegate.getHashingAlgorithm();
-    }
+		return delegate.getHashingAlgorithm();
+	}
 
-    public CoinIcoInfo getIcoInfo() {
+	public CoinIcoInfo getIcoInfo() {
 
-	return new CGCoinIcoInfo(delegate.getIcoData());
-    }
+		return new CGCoinIcoInfo(delegate.getIcoData());
+	}
 
-    public String getId() {
+	public String getId() {
 
-	return delegate.getId();
-    }
+		return delegate.getId();
+	}
 
-    public CoinPicture getPicture() {
+	public CoinPicture getPicture() {
 
-	return new CGCoinPicture(delegate.getImage());
-    }
+		return new CGCoinPicture(delegate.getImage());
+	}
 
-    public String getLastUpdated() {
+	public String getLastUpdated() {
 
-	return delegate.getLastUpdated();
-    }
+		return delegate.getLastUpdated();
+	}
 
-    public CoinResources getResources() {
+	public CoinResources getResources() {
 
-	return new CGCoinResources(delegate.getLinks());
-    }
+		return new CGCoinResources(delegate.getLinks());
+	}
 
-    public double getLiquidityScore() {
+	public double getLiquidityScore() {
 
-	return delegate.getLiquidityScore();
-    }
+		return delegate.getLiquidityScore();
+	}
 
-    public Map<String, String> getLocalization() {
+	public Map<String, String> getLocalization() {
 
-	return delegate.getLocalization();
-    }
+		return delegate.getLocalization();
+	}
 
-    public long getMarketCapRank() {
+	public long getMarketCapRank() {
 
-	return delegate.getMarketCapRank();
-    }
+		return delegate.getMarketCapRank();
+	}
 
-    public MarketData getMarketData() {
+	public MarketData getMarketData() {
 
-	return delegate.getMarketData();
-    }
+		return delegate.getMarketData();
+	}
 
-    public String getName() {
+	public String getName() {
 
-	return delegate.getName();
-    }
+		return delegate.getName();
+	}
 
-    public Map<String, String> getPlatforms() {
+	public Map<String, String> getPlatforms() {
 
-	return delegate.getPlatforms();
-    }
+		return delegate.getPlatforms();
+	}
 
-    public double getPublicInterestScore() {
+	public double getPublicInterestScore() {
 
-	return delegate.getPublicInterestScore();
-    }
+		return delegate.getPublicInterestScore();
+	}
 
-    public CoinOtherScores getOtherScores() {
+	public CoinOtherScores getOtherScores() {
 
-	return new CGCoinOtherScores(delegate.getPublicInterestStats());
-    }
+		return new CGCoinOtherScores(delegate.getPublicInterestStats());
+	}
 
-    public String getPublicNotice() {
+	public String getPublicNotice() {
 
-	return delegate.getPublicNotice();
-    }
+		return delegate.getPublicNotice();
+	}
 
-    public double getSentimentVotesDownPercentage() {
+	public double getSentimentVotesDownPercentage() {
 
-	return delegate.getSentimentVotesDownPercentage();
-    }
+		return delegate.getSentimentVotesDownPercentage();
+	}
 
-    public double getSentimentVotesUpPercentage() {
+	public double getSentimentVotesUpPercentage() {
 
-	return delegate.getSentimentVotesUpPercentage();
-    }
+		return delegate.getSentimentVotesUpPercentage();
+	}
 
-    public List<Object> getStatusUpdates() {
+	public List<Object> getStatusUpdates() {
 
-	return delegate.getStatusUpdates();
-    }
+		return delegate.getStatusUpdates();
+	}
 
-    public String getSymbol() {
+	public String getSymbol() {
 
-	return delegate.getSymbol();
-    }
+		return delegate.getSymbol();
+	}
 
-    public List<Ticker> getTickers() {
+	public List<Ticker> getTickers() {
 
-	return delegate.getTickers();
-    }
+		return delegate.getTickers();
+	}
 
-    public int hashCode() {
+	public int hashCode() {
 
-	return delegate.hashCode();
-    }
+		return delegate.hashCode();
+	}
 
-    public String toString() {
+	public String toString() {
 
-	return delegate.toString();
-    }
+		return delegate.toString();
+	}
 
 }

@@ -6,64 +6,64 @@ import com.litesoftwares.coingecko.domain.Coins.CoinData.CommunityData;
 
 public class CGCoinCommunityInfo implements CoinCommunityInfo {
 
-    private final CommunityData delegate;
+	private final CommunityData delegate;
 
-    public CGCoinCommunityInfo(CommunityData delegate) {
+	public CGCoinCommunityInfo(CommunityData delegate) {
 
-	super();
-	this.delegate = delegate;
-    }
+		super();
+		this.delegate = delegate;
+	}
 
-    @Override
-    public long getFacebookLikes() {
+	@Override
+	public long getFacebookLikes() {
 
-	return delegate.getFacebookLikes();
-    }
+		return delegate.getFacebookLikes();
+	}
 
-    @Override
-    public double getRedditAccountsActive48h() {
+	@Override
+	public double getRedditAccountsActive48h() {
 
-	return delegate.getRedditAccountsActive48h();
-    }
+		return delegate.getRedditAccountsActive48h();
+	}
 
-    @Override
-    public double getRedditAverageComments48h() {
+	@Override
+	public double getRedditAverageComments48h() {
 
-	return delegate.getRedditAverageComments48h();
-    }
+		return delegate.getRedditAverageComments48h();
+	}
 
-    @Override
-    public double getRedditAveragePosts48h() {
+	@Override
+	public double getRedditAveragePosts48h() {
 
-	return delegate.getRedditAveragePosts48h();
-    }
+		return delegate.getRedditAveragePosts48h();
+	}
 
-    @Override
-    public long getRedditSubscribers() {
+	@Override
+	public long getRedditSubscribers() {
 
-	return delegate.getRedditSubscribers();
-    }
+		return delegate.getRedditSubscribers();
+	}
 
-    @Override
-    public long getTelegramChannelUserCount() {
+	@Override
+	public long getTelegramChannelUserCount() {
 
-	return delegate.getTelegramChannelUserCount();
-    }
+		return delegate.getTelegramChannelUserCount();
+	}
 
-    @Override
-    public long getTwitterFollowers() {
+	@Override
+	public long getTwitterFollowers() {
 
-	return delegate.getTwitterFollowers();
-    }
+		return delegate.getTwitterFollowers();
+	}
 
-    public int hashCode() {
+	public int hashCode() {
 
-	return delegate.hashCode();
-    }
+		return delegate.hashCode();
+	}
 
-    public String toString() {
+	public String toString() {
 
-	return delegate.toString();
-    }
+		return delegate.toString();
+	}
 
 }

@@ -12,55 +12,55 @@ import org.instrumenteddreams.cryptofinder.coin.impl.coingecko.CGOracle;
 
 public class DefaultOracle implements CoinOracle {
 
-    private CoinOracle coinGeckoOracle;
+	private CoinOracle coinGeckoOracle;
 
-    @Override
-    public void start() {
+	@Override
+	public void start() {
 
-	coinGeckoOracle = new CGOracle();
-	coinGeckoOracle.start();
-    }
+		coinGeckoOracle = new CGOracle();
+		coinGeckoOracle.start();
+	}
 
-    @Override
-    public void shutDown() {
+	@Override
+	public void shutDown() {
 
-	coinGeckoOracle.shutDown();
-    }
+		coinGeckoOracle.shutDown();
+	}
 
-    @Override
-    public boolean isStarted() {
+	@Override
+	public boolean isStarted() {
 
-	return coinGeckoOracle.isStarted();
-    }
+		return coinGeckoOracle.isStarted();
+	}
 
-    @Override
-    public Coin completeCoinInfo(Coin coin, Info info) {
+	@Override
+	public Coin completeCoinInfo(Coin coin, Info info) {
 
-	return coinGeckoOracle.completeCoinInfo(coin, info);
-    }
+		return coinGeckoOracle.completeCoinInfo(coin, info);
+	}
 
-    @Override
-    public List<CoinBasicInfo> getCoinBasicInfos(int pageNumber) {
+	@Override
+	public List<CoinBasicInfo> getCoinBasicInfos(int pageNumber) {
 
-	return coinGeckoOracle.getCoinBasicInfos(pageNumber);
-    }
+		return coinGeckoOracle.getCoinBasicInfos(pageNumber);
+	}
 
-    @Override
-    public int getDefaultPageSize() {
+	@Override
+	public int getDefaultPageSize() {
 
-	return coinGeckoOracle.getDefaultPageSize();
-    }
+		return coinGeckoOracle.getDefaultPageSize();
+	}
 
-    @Override
-    public CoinOverallInfo getCoinOverallInfo(String id) {
+	@Override
+	public CoinOverallInfo getCoinOverallInfo(String id) {
 
-	return coinGeckoOracle.getCoinOverallInfo(id);
-    }
+		return coinGeckoOracle.getCoinOverallInfo(id);
+	}
 
-    @Override
-    public CoinChartInfo getCoinCharInfo(String id, int days) {
+	@Override
+	public CoinChartInfo getCoinCharInfo(String id, int days) {
 
-	return coinGeckoOracle.getCoinCharInfo(id, days);
-    }
+		return coinGeckoOracle.getCoinCharInfo(id, days);
+	}
 
 }

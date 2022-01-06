@@ -4,20 +4,20 @@ import java.util.List;
 
 public interface CoinOracle {
 
-    void start();
+	void start();
 
-    boolean isStarted();
+	boolean isStarted();
 
-    List<CoinBasicInfo> getCoinBasicInfos(int pageNumber);
+	List<CoinBasicInfo> getCoinBasicInfos(int pageNumber);
 
-    CoinOverallInfo getCoinOverallInfo(String id);
+	CoinOverallInfo getCoinOverallInfo(String id);
 
-    void shutDown();
+	void shutDown();
 
-    Coin completeCoinInfo(Coin coin, Coin.Info info);
+	Coin completeCoinInfo(Coin coin, Coin.Info info);
 
-    int getDefaultPageSize();
+	int getDefaultPageSize();
 
-    CoinChartInfo getCoinCharInfo(String id, int days);
+	CoinChartInfo getCoinCharInfo(String id, int days);
 
 }

@@ -4,9 +4,9 @@ import org.instrumenteddreams.cryptofinder.coin.impl.DefaultOracle;
 
 public class CoinOracles {
 
-    public static CoinOracle getDefault() {
+	public static CoinOracle getDefault() {
 
-	return new DefaultOracle();
-    }
+		return new DefaultOracle();
+	}
 
 }

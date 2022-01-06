@@ -4,73 +4,73 @@ import org.instrumenteddreams.cryptofinder.coin.CoinChartInfo.OhlcSampleInfo;
 
 public class OhlcSampleInfoImpl implements OhlcSampleInfo {
 
-    private final long epochTime;
+	private final long epochTime;
 
-    private final double open;
+	private final double open;
 
-    private final double high;
+	private final double high;
 
-    private final double low;
+	private final double low;
 
-    private final double close;
+	private final double close;
 
-    private final double closeVolume;
+	private final double closeVolume;
 
-    private final double closeMarketCap;
+	private final double closeMarketCap;
 
-    public OhlcSampleInfoImpl(long epochTime, double open, double high, double low, double close, double closeVolume,
-	    double closeMarketCap) {
+	public OhlcSampleInfoImpl(long epochTime, double open, double high, double low, double close, double closeVolume,
+			double closeMarketCap) {
 
-	super();
-	this.epochTime = epochTime;
-	this.open = open;
-	this.high = high;
-	this.low = low;
-	this.close = close;
-	this.closeVolume = closeVolume;
-	this.closeMarketCap = closeMarketCap;
-    }
+		super();
+		this.epochTime = epochTime;
+		this.open = open;
+		this.high = high;
+		this.low = low;
+		this.close = close;
+		this.closeVolume = closeVolume;
+		this.closeMarketCap = closeMarketCap;
+	}
 
-    @Override
-    public long getEpochTime() {
+	@Override
+	public long getEpochTime() {
 
-	return epochTime;
-    }
+		return epochTime;
+	}
 
-    @Override
-    public double getOpen() {
+	@Override
+	public double getOpen() {
 
-	return open;
-    }
+		return open;
+	}
 
-    @Override
-    public double getHigh() {
+	@Override
+	public double getHigh() {
 
-	return high;
-    }
+		return high;
+	}
 
-    @Override
-    public double getLow() {
+	@Override
+	public double getLow() {
 
-	return low;
-    }
+		return low;
+	}
 
-    @Override
-    public double getClose() {
+	@Override
+	public double getClose() {
 
-	return close;
-    }
+		return close;
+	}
 
-    @Override
-    public double getCloseVolume() {
+	@Override
+	public double getCloseVolume() {
 
-	return closeVolume;
-    }
+		return closeVolume;
+	}
 
-    @Override
-    public double getCloseMarketCap() {
+	@Override
+	public double getCloseMarketCap() {
 
-	return closeMarketCap;
-    }
+		return closeMarketCap;
+	}
 
 }

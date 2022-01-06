@@ -6,44 +6,44 @@ import com.litesoftwares.coingecko.domain.Shared.Image;
 
 public class CGCoinPicture implements CoinPicture {
 
-    private final Image delegate;
+	private final Image delegate;
 
-    public CGCoinPicture(Image delegate) {
+	public CGCoinPicture(Image delegate) {
 
-	this.delegate = delegate;
-    }
+		this.delegate = delegate;
+	}
 
-    public boolean equals(Object o) {
+	public boolean equals(Object o) {
 
-	return delegate.equals(o);
-    }
+		return delegate.equals(o);
+	}
 
-    @Override
-    public String getLarge() {
+	@Override
+	public String getLarge() {
 
-	return delegate.getLarge();
-    }
+		return delegate.getLarge();
+	}
 
-    @Override
-    public String getSmall() {
+	@Override
+	public String getSmall() {
 
-	return delegate.getSmall();
-    }
+		return delegate.getSmall();
+	}
 
-    @Override
-    public String getThumb() {
+	@Override
+	public String getThumb() {
 
-	return delegate.getThumb();
-    }
+		return delegate.getThumb();
+	}
 
-    public int hashCode() {
+	public int hashCode() {
 
-	return delegate.hashCode();
-    }
+		return delegate.hashCode();
+	}
 
-    public String toString() {
+	public String toString() {
 
-	return delegate.toString();
-    }
+		return delegate.toString();
+	}
 
 }

@@ -10,192 +10,192 @@ import com.litesoftwares.coingecko.domain.Coins.CoinData.SparklineIn7d;
 
 public class CGCoinBasicInfo implements CoinBasicInfo {
 
-    private CoinMarkets coinMarketsDelegate;
+	private CoinMarkets coinMarketsDelegate;
 
-    public CGCoinBasicInfo(CoinMarkets coinMarketsDelegate) {
+	public CGCoinBasicInfo(CoinMarkets coinMarketsDelegate) {
 
-	super();
-	this.coinMarketsDelegate = coinMarketsDelegate;
-    }
+		super();
+		this.coinMarketsDelegate = coinMarketsDelegate;
+	}
 
-    public boolean equals(Object o) {
+	public boolean equals(Object o) {
 
-	return coinMarketsDelegate.equals(o);
-    }
+		return coinMarketsDelegate.equals(o);
+	}
 
-    public double getAth() {
+	public double getAth() {
 
-	return coinMarketsDelegate.getAth();
-    }
+		return coinMarketsDelegate.getAth();
+	}
 
-    public double getAthChangePercentage() {
+	public double getAthChangePercentage() {
 
-	return coinMarketsDelegate.getAthChangePercentage();
-    }
+		return coinMarketsDelegate.getAthChangePercentage();
+	}
 
-    public String getAthDate() {
+	public String getAthDate() {
 
-	return coinMarketsDelegate.getAthDate();
-    }
+		return coinMarketsDelegate.getAthDate();
+	}
 
-    public double getAtl() {
+	public double getAtl() {
 
-	return coinMarketsDelegate.getAtl();
-    }
+		return coinMarketsDelegate.getAtl();
+	}
 
-    public double getAtlChangePercentage() {
+	public double getAtlChangePercentage() {
 
-	return coinMarketsDelegate.getAtlChangePercentage();
-    }
+		return coinMarketsDelegate.getAtlChangePercentage();
+	}
 
-    public String getAtlDate() {
+	public String getAtlDate() {
 
-	return coinMarketsDelegate.getAtlDate();
-    }
+		return coinMarketsDelegate.getAtlDate();
+	}
 
-    public double getCirculatingSupply() {
+	public double getCirculatingSupply() {
 
-	return coinMarketsDelegate.getCirculatingSupply();
-    }
+		return coinMarketsDelegate.getCirculatingSupply();
+	}
 
-    public double getCurrentPrice() {
+	public double getCurrentPrice() {
 
-	return coinMarketsDelegate.getCurrentPrice();
-    }
+		return coinMarketsDelegate.getCurrentPrice();
+	}
 
-    public BigDecimal getFullyDilutedValuation() {
+	public BigDecimal getFullyDilutedValuation() {
 
-	return coinMarketsDelegate.getFullyDilutedValuation();
-    }
+		return coinMarketsDelegate.getFullyDilutedValuation();
+	}
 
-    public double getHigh24h() {
+	public double getHigh24h() {
 
-	return coinMarketsDelegate.getHigh24h();
-    }
+		return coinMarketsDelegate.getHigh24h();
+	}
 
-    public String getId() {
+	public String getId() {
 
-	return coinMarketsDelegate.getId();
-    }
+		return coinMarketsDelegate.getId();
+	}
 
-    public String getImageId() {
+	public String getImageId() {
 
-	return coinMarketsDelegate.getImage();
-    }
+		return coinMarketsDelegate.getImage();
+	}
 
-    public String getLastUpdated() {
+	public String getLastUpdated() {
 
-	return coinMarketsDelegate.getLastUpdated();
-    }
+		return coinMarketsDelegate.getLastUpdated();
+	}
 
-    public double getLow24h() {
+	public double getLow24h() {
 
-	return coinMarketsDelegate.getLow24h();
-    }
+		return coinMarketsDelegate.getLow24h();
+	}
 
-    public double getMarketCap() {
+	public double getMarketCap() {
 
-	return coinMarketsDelegate.getMarketCap();
-    }
+		return coinMarketsDelegate.getMarketCap();
+	}
 
-    public double getMarketCapChange24h() {
+	public double getMarketCapChange24h() {
 
-	return coinMarketsDelegate.getMarketCapChange24h();
-    }
+		return coinMarketsDelegate.getMarketCapChange24h();
+	}
 
-    public double getMarketCapChangePercentage24h() {
+	public double getMarketCapChangePercentage24h() {
 
-	return coinMarketsDelegate.getMarketCapChangePercentage24h();
-    }
+		return coinMarketsDelegate.getMarketCapChangePercentage24h();
+	}
 
-    public long getMarketCapRank() {
+	public long getMarketCapRank() {
 
-	return coinMarketsDelegate.getMarketCapRank();
-    }
+		return coinMarketsDelegate.getMarketCapRank();
+	}
 
-    public String getName() {
+	public String getName() {
 
-	return coinMarketsDelegate.getName();
-    }
+		return coinMarketsDelegate.getName();
+	}
 
-    public double getPriceChange24h() {
+	public double getPriceChange24h() {
 
-	return coinMarketsDelegate.getPriceChange24h();
-    }
+		return coinMarketsDelegate.getPriceChange24h();
+	}
 
-    public double getPriceChangePercentage14dInCurrency() {
+	public double getPriceChangePercentage14dInCurrency() {
 
-	return coinMarketsDelegate.getPriceChangePercentage14dInCurrency();
-    }
+		return coinMarketsDelegate.getPriceChangePercentage14dInCurrency();
+	}
 
-    public double getPriceChangePercentage1hInCurrency() {
+	public double getPriceChangePercentage1hInCurrency() {
 
-	return coinMarketsDelegate.getPriceChangePercentage1hInCurrency();
-    }
+		return coinMarketsDelegate.getPriceChangePercentage1hInCurrency();
+	}
 
-    public double getPriceChangePercentage1yInCurrency() {
+	public double getPriceChangePercentage1yInCurrency() {
 
-	return coinMarketsDelegate.getPriceChangePercentage1yInCurrency();
-    }
+		return coinMarketsDelegate.getPriceChangePercentage1yInCurrency();
+	}
 
-    public double getPriceChangePercentage200dInCurrency() {
+	public double getPriceChangePercentage200dInCurrency() {
 
-	return coinMarketsDelegate.getPriceChangePercentage200dInCurrency();
-    }
+		return coinMarketsDelegate.getPriceChangePercentage200dInCurrency();
+	}
 
-    public double getPriceChangePercentage24h() {
+	public double getPriceChangePercentage24h() {
 
-	return coinMarketsDelegate.getPriceChangePercentage24h();
-    }
+		return coinMarketsDelegate.getPriceChangePercentage24h();
+	}
 
-    public double getPriceChangePercentage24hInCurrency() {
+	public double getPriceChangePercentage24hInCurrency() {
 
-	return coinMarketsDelegate.getPriceChangePercentage24hInCurrency();
-    }
+		return coinMarketsDelegate.getPriceChangePercentage24hInCurrency();
+	}
 
-    public double getPriceChangePercentage30dInCurrency() {
+	public double getPriceChangePercentage30dInCurrency() {
 
-	return coinMarketsDelegate.getPriceChangePercentage30dInCurrency();
-    }
+		return coinMarketsDelegate.getPriceChangePercentage30dInCurrency();
+	}
 
-    public double getPriceChangePercentage7dInCurrency() {
+	public double getPriceChangePercentage7dInCurrency() {
 
-	return coinMarketsDelegate.getPriceChangePercentage7dInCurrency();
-    }
+		return coinMarketsDelegate.getPriceChangePercentage7dInCurrency();
+	}
 
-    public Roi getRoi() {
+	public Roi getRoi() {
 
-	return coinMarketsDelegate.getRoi();
-    }
+		return coinMarketsDelegate.getRoi();
+	}
 
-    public SparklineIn7d getSparklineIn7d() {
+	public SparklineIn7d getSparklineIn7d() {
 
-	return coinMarketsDelegate.getSparklineIn7d();
-    }
+		return coinMarketsDelegate.getSparklineIn7d();
+	}
 
-    public String getSymbol() {
+	public String getSymbol() {
 
-	return coinMarketsDelegate.getSymbol();
-    }
+		return coinMarketsDelegate.getSymbol();
+	}
 
-    public double getTotalSupply() {
+	public double getTotalSupply() {
 
-	return coinMarketsDelegate.getTotalSupply();
-    }
+		return coinMarketsDelegate.getTotalSupply();
+	}
 
-    public double getTotalVolume() {
+	public double getTotalVolume() {
 
-	return coinMarketsDelegate.getTotalVolume();
-    }
+		return coinMarketsDelegate.getTotalVolume();
+	}
 
-    public int hashCode() {
+	public int hashCode() {
 
-	return coinMarketsDelegate.hashCode();
-    }
+		return coinMarketsDelegate.hashCode();
+	}
 
-    public String toString() {
+	public String toString() {
 
-	return coinMarketsDelegate.toString();
-    }
+		return coinMarketsDelegate.toString();
+	}
 
 }

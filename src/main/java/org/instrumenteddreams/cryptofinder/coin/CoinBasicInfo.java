@@ -7,70 +7,70 @@ import com.litesoftwares.coingecko.domain.Coins.CoinData.SparklineIn7d;
 
 public interface CoinBasicInfo {
 
-    double getAth();
+	double getAth();
 
-    double getAthChangePercentage();
+	double getAthChangePercentage();
 
-    String getAthDate();
+	String getAthDate();
 
-    double getAtl();
+	double getAtl();
 
-    double getAtlChangePercentage();
+	double getAtlChangePercentage();
 
-    String getAtlDate();
+	String getAtlDate();
 
-    double getCirculatingSupply();
+	double getCirculatingSupply();
 
-    double getCurrentPrice();
+	double getCurrentPrice();
 
-    BigDecimal getFullyDilutedValuation();
+	BigDecimal getFullyDilutedValuation();
 
-    double getHigh24h();
+	double getHigh24h();
 
-    String getId();
+	String getId();
 
-    String getImageId();
+	String getImageId();
 
-    String getLastUpdated();
+	String getLastUpdated();
 
-    double getLow24h();
+	double getLow24h();
 
-    double getMarketCap();
+	double getMarketCap();
 
-    double getMarketCapChange24h();
+	double getMarketCapChange24h();
 
-    double getMarketCapChangePercentage24h();
+	double getMarketCapChangePercentage24h();
 
-    long getMarketCapRank();
+	long getMarketCapRank();
 
-    String getName();
+	String getName();
 
-    double getPriceChange24h();
+	double getPriceChange24h();
 
-    double getPriceChangePercentage14dInCurrency();
+	double getPriceChangePercentage14dInCurrency();
 
-    double getPriceChangePercentage1hInCurrency();
+	double getPriceChangePercentage1hInCurrency();
 
-    double getPriceChangePercentage1yInCurrency();
+	double getPriceChangePercentage1yInCurrency();
 
-    double getPriceChangePercentage200dInCurrency();
+	double getPriceChangePercentage200dInCurrency();
 
-    double getPriceChangePercentage24h();
+	double getPriceChangePercentage24h();
 
-    double getPriceChangePercentage24hInCurrency();
+	double getPriceChangePercentage24hInCurrency();
 
-    double getPriceChangePercentage30dInCurrency();
+	double getPriceChangePercentage30dInCurrency();
 
-    double getPriceChangePercentage7dInCurrency();
+	double getPriceChangePercentage7dInCurrency();
 
-    Roi getRoi();
+	Roi getRoi();
 
-    SparklineIn7d getSparklineIn7d();
+	SparklineIn7d getSparklineIn7d();
 
-    String getSymbol();
+	String getSymbol();
 
-    double getTotalSupply();
+	double getTotalSupply();
 
-    double getTotalVolume();
+	double getTotalVolume();
 
 }

@@ -2,8 +2,8 @@ package org.instrumenteddreams.cryptofinder.coin;
 
 public interface CoinOtherScores {
 
-    long getAlexaRank();
+	long getAlexaRank();
 
-    long getBingMatches();
+	long getBingMatches();
 
 }

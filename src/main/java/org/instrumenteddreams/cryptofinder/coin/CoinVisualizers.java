@@ -5,9 +5,9 @@ import org.instrumenteddreams.cryptofinder.coin.impl.selenium.SeleniumBrowserVis
 
 public class CoinVisualizers {
 
-    public static CoinVisualizer getDefault() {
+	public static CoinVisualizer getDefault() {
 
-	return new SeleniumBrowserVisualizer(CGConstants.COIN_GECKO_COIN_BASE_URL);
-    }
+		return new SeleniumBrowserVisualizer(CGConstants.COIN_GECKO_COIN_BASE_URL);
+	}
 
 }

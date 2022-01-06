@@ -8,76 +8,76 @@ import org.instrumenteddreams.cryptofinder.coin.CoinOverallInfo;
 
 public class CoinImpl implements Coin {
 
-    private CoinBasicInfo coinBasicInfo;
-    private CoinOverallInfo coinOverallInfo;
-    private CoinMarketInfo coinMarketInfo;
-    private CoinChartInfo coinChartInfo;
+	private CoinBasicInfo coinBasicInfo;
+	private CoinOverallInfo coinOverallInfo;
+	private CoinMarketInfo coinMarketInfo;
+	private CoinChartInfo coinChartInfo;
 
-    private final String id;
+	private final String id;
 
-    public CoinImpl(CoinBasicInfo coinBasicInfo) {
+	public CoinImpl(CoinBasicInfo coinBasicInfo) {
 
-	this.id = coinBasicInfo.getId();
-	this.coinBasicInfo = coinBasicInfo;
-    }
+		this.id = coinBasicInfo.getId();
+		this.coinBasicInfo = coinBasicInfo;
+	}
 
-    @Override
-    public CoinBasicInfo getCoinBasicInfo() {
+	@Override
+	public CoinBasicInfo getCoinBasicInfo() {
 
-	return coinBasicInfo;
-    }
+		return coinBasicInfo;
+	}
 
-    public void setCoinBasicInfo(CoinBasicInfo coinBasicInfo) {
+	public void setCoinBasicInfo(CoinBasicInfo coinBasicInfo) {
 
-	this.coinBasicInfo = coinBasicInfo;
-    }
+		this.coinBasicInfo = coinBasicInfo;
+	}
 
-    @Override
-    public CoinOverallInfo getCoinOverallInfo() {
+	@Override
+	public CoinOverallInfo getCoinOverallInfo() {
 
-	return coinOverallInfo;
-    }
+		return coinOverallInfo;
+	}
 
-    public void setCoinOverallInfo(CoinOverallInfo coinOverallInfo) {
+	public void setCoinOverallInfo(CoinOverallInfo coinOverallInfo) {
 
-	this.coinOverallInfo = coinOverallInfo;
-    }
+		this.coinOverallInfo = coinOverallInfo;
+	}
 
-    @Override
-    public CoinMarketInfo getCoinMarketInfo() {
+	@Override
+	public CoinMarketInfo getCoinMarketInfo() {
 
-	return coinMarketInfo;
-    }
+		return coinMarketInfo;
+	}
 
-    @Override
-    public CoinChartInfo getCoinChartInfo() {
+	@Override
+	public CoinChartInfo getCoinChartInfo() {
 
-	return coinChartInfo;
-    }
+		return coinChartInfo;
+	}
 
-    @Override
-    public void setCoinMarketInfo(CoinMarketInfo coinMarketInfo) {
+	@Override
+	public void setCoinMarketInfo(CoinMarketInfo coinMarketInfo) {
 
-	this.coinMarketInfo = coinMarketInfo;
-    }
+		this.coinMarketInfo = coinMarketInfo;
+	}
 
-    @Override
-    public void setCoinOverAllInfo(CoinOverallInfo info) {
+	@Override
+	public void setCoinOverAllInfo(CoinOverallInfo info) {
 
-	this.coinOverallInfo = info;
+		this.coinOverallInfo = info;
 
-    }
+	}
 
-    @Override
-    public void setCoinChartInfo(CoinChartInfo coinChartInfo) {
+	@Override
+	public void setCoinChartInfo(CoinChartInfo coinChartInfo) {
 
-	this.coinChartInfo = coinChartInfo;
-    }
+		this.coinChartInfo = coinChartInfo;
+	}
 
-    @Override
-    public String getId() {
+	@Override
+	public String getId() {
 
-	return id;
-    }
+		return id;
+	}
 
 }

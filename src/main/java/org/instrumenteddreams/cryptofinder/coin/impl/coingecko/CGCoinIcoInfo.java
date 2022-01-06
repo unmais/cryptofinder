@@ -7,207 +7,207 @@ import com.litesoftwares.coingecko.domain.Coins.CoinData.Links_;
 
 public class CGCoinIcoInfo implements CoinIcoInfo {
 
-    private final IcoData icoData;
+	private final IcoData icoData;
 
-    public CGCoinIcoInfo(IcoData icoData) {
+	public CGCoinIcoInfo(IcoData icoData) {
 
-	super();
-	this.icoData = icoData;
-    }
+		super();
+		this.icoData = icoData;
+	}
 
-    public boolean equals(Object o) {
+	public boolean equals(Object o) {
 
-	return icoData.equals(o);
-    }
+		return icoData.equals(o);
+	}
 
-    @Override
-    public String getAcceptingCurrencies() {
+	@Override
+	public String getAcceptingCurrencies() {
 
-	return icoData.getAcceptingCurrencies();
-    }
+		return icoData.getAcceptingCurrencies();
+	}
 
-    @Override
-    public Object getAmountForSale() {
+	@Override
+	public Object getAmountForSale() {
 
-	return icoData.getAmountForSale();
-    }
+		return icoData.getAmountForSale();
+	}
 
-    @Override
-    public Object getBasePreSaleAmount() {
+	@Override
+	public Object getBasePreSaleAmount() {
 
-	return icoData.getBasePreSaleAmount();
-    }
+		return icoData.getBasePreSaleAmount();
+	}
 
-    @Override
-    public String getBasePublicSaleAmount() {
+	@Override
+	public String getBasePublicSaleAmount() {
 
-	return icoData.getBasePublicSaleAmount();
-    }
+		return icoData.getBasePublicSaleAmount();
+	}
 
-    @Override
-    public String getBountyDetailUrl() {
+	@Override
+	public String getBountyDetailUrl() {
 
-	return icoData.getBountyDetailUrl();
-    }
+		return icoData.getBountyDetailUrl();
+	}
 
-    @Override
-    public String getCountryOrigin() {
+	@Override
+	public String getCountryOrigin() {
 
-	return icoData.getCountryOrigin();
-    }
+		return icoData.getCountryOrigin();
+	}
 
-    @Override
-    public String getDescription() {
+	@Override
+	public String getDescription() {
 
-	return icoData.getDescription();
-    }
+		return icoData.getDescription();
+	}
 
-    @Override
-    public Object getHardcapAmount() {
+	@Override
+	public Object getHardcapAmount() {
 
-	return icoData.getHardcapAmount();
-    }
+		return icoData.getHardcapAmount();
+	}
 
-    @Override
-    public String getHardcapCurrency() {
+	@Override
+	public String getHardcapCurrency() {
 
-	return icoData.getHardcapCurrency();
-    }
+		return icoData.getHardcapCurrency();
+	}
 
-    @Override
-    public String getIcoEndDate() {
+	@Override
+	public String getIcoEndDate() {
 
-	return icoData.getIcoEndDate();
-    }
+		return icoData.getIcoEndDate();
+	}
 
-    @Override
-    public String getIcoStartDate() {
+	@Override
+	public String getIcoStartDate() {
 
-	return icoData.getIcoStartDate();
-    }
+		return icoData.getIcoStartDate();
+	}
 
-    @Override
-    public Links_ getLinks() {
+	@Override
+	public Links_ getLinks() {
 
-	return icoData.getLinks();
-    }
+		return icoData.getLinks();
+	}
 
-    @Override
-    public Object getPreSaleAvailable() {
+	@Override
+	public Object getPreSaleAvailable() {
 
-	return icoData.getPreSaleAvailable();
-    }
+		return icoData.getPreSaleAvailable();
+	}
 
-    @Override
-    public Object getPreSaleEndDate() {
+	@Override
+	public Object getPreSaleEndDate() {
 
-	return icoData.getPreSaleEndDate();
-    }
+		return icoData.getPreSaleEndDate();
+	}
 
-    @Override
-    public Object getPreSaleStartDate() {
+	@Override
+	public Object getPreSaleStartDate() {
 
-	return icoData.getPreSaleStartDate();
-    }
+		return icoData.getPreSaleStartDate();
+	}
 
-    @Override
-    public Object getQuotePreSaleAmount() {
+	@Override
+	public Object getQuotePreSaleAmount() {
 
-	return icoData.getQuotePreSaleAmount();
-    }
+		return icoData.getQuotePreSaleAmount();
+	}
 
-    @Override
-    public String getQuotePreSaleCurrency() {
+	@Override
+	public String getQuotePreSaleCurrency() {
 
-	return icoData.getQuotePreSaleCurrency();
-    }
+		return icoData.getQuotePreSaleCurrency();
+	}
 
-    @Override
-    public String getQuotePublicSaleAmount() {
+	@Override
+	public String getQuotePublicSaleAmount() {
 
-	return icoData.getQuotePublicSaleAmount();
-    }
+		return icoData.getQuotePublicSaleAmount();
+	}
 
-    @Override
-    public String getQuotePublicSaleCurrency() {
+	@Override
+	public String getQuotePublicSaleCurrency() {
 
-	return icoData.getQuotePublicSaleCurrency();
-    }
+		return icoData.getQuotePublicSaleCurrency();
+	}
 
-    @Override
-    public String getShortDesc() {
+	@Override
+	public String getShortDesc() {
 
-	return icoData.getShortDesc();
-    }
+		return icoData.getShortDesc();
+	}
 
-    @Override
-    public Object getSoftcapAmount() {
+	@Override
+	public Object getSoftcapAmount() {
 
-	return icoData.getSoftcapAmount();
-    }
+		return icoData.getSoftcapAmount();
+	}
 
-    @Override
-    public String getSoftcapCurrency() {
+	@Override
+	public String getSoftcapCurrency() {
 
-	return icoData.getSoftcapCurrency();
-    }
+		return icoData.getSoftcapCurrency();
+	}
 
-    @Override
-    public Object getTotalRaised() {
+	@Override
+	public Object getTotalRaised() {
 
-	return icoData.getTotalRaised();
-    }
+		return icoData.getTotalRaised();
+	}
 
-    @Override
-    public String getTotalRaisedCurrency() {
+	@Override
+	public String getTotalRaisedCurrency() {
 
-	return icoData.getTotalRaisedCurrency();
-    }
+		return icoData.getTotalRaisedCurrency();
+	}
 
-    @Override
-    public Object getWhitelistAvailable() {
+	@Override
+	public Object getWhitelistAvailable() {
 
-	return icoData.getWhitelistAvailable();
-    }
+		return icoData.getWhitelistAvailable();
+	}
 
-    @Override
-    public Object getWhitelistEndDate() {
+	@Override
+	public Object getWhitelistEndDate() {
 
-	return icoData.getWhitelistEndDate();
-    }
+		return icoData.getWhitelistEndDate();
+	}
 
-    @Override
-    public Object getWhitelistStartDate() {
+	@Override
+	public Object getWhitelistStartDate() {
 
-	return icoData.getWhitelistStartDate();
-    }
+		return icoData.getWhitelistStartDate();
+	}
 
-    @Override
-    public String getWhitelistUrl() {
+	@Override
+	public String getWhitelistUrl() {
 
-	return icoData.getWhitelistUrl();
-    }
+		return icoData.getWhitelistUrl();
+	}
 
-    public int hashCode() {
+	public int hashCode() {
 
-	return icoData.hashCode();
-    }
+		return icoData.hashCode();
+	}
 
-    @Override
-    public boolean isKycRequired() {
+	@Override
+	public boolean isKycRequired() {
 
-	return icoData.isKycRequired();
-    }
+		return icoData.isKycRequired();
+	}
 
-    @Override
-    public boolean isPreSaleEnded() {
+	@Override
+	public boolean isPreSaleEnded() {
 
-	return icoData.isPreSaleEnded();
-    }
+		return icoData.isPreSaleEnded();
+	}
 
-    public String toString() {
+	public String toString() {
 
-	return icoData.toString();
-    }
+		return icoData.toString();
+	}
 
 }

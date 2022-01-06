@@ -6,28 +6,28 @@ import com.litesoftwares.coingecko.domain.Coins.CoinData.ReposUrl;
 
 public interface CoinResources {
 
-    List<String> getAnnouncementUrl();
+	List<String> getAnnouncementUrl();
 
-    Object getBitcointalkThreadIdentifier();
+	Object getBitcointalkThreadIdentifier();
 
-    List<String> getBlockchainSite();
+	List<String> getBlockchainSite();
 
-    List<String> getChatUrl();
+	List<String> getChatUrl();
 
-    String getFacebookUsername();
+	String getFacebookUsername();
 
-    List<String> getHomepage();
+	List<String> getHomepage();
 
-    List<String> getOfficialForumUrl();
+	List<String> getOfficialForumUrl();
 
-    ReposUrl getReposUrl();
+	ReposUrl getReposUrl();
 
-    String getSubredditUrl();
+	String getSubredditUrl();
 
-    String getTelegramChannelIdentifier();
+	String getTelegramChannelIdentifier();
 
-    String getTwitterScreenName();
+	String getTwitterScreenName();
 
-    String toString();
+	String toString();
 
 }

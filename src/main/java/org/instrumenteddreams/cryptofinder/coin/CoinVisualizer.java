@@ -2,8 +2,8 @@ package org.instrumenteddreams.cryptofinder.coin;
 
 public interface CoinVisualizer {
 
-    void start();
+	void start();
 
-    void visualize(Coin coin);
+	void visualize(Coin coin);
 
 }

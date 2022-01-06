@@ -9,93 +9,93 @@ import com.litesoftwares.coingecko.domain.Coins.CoinData.ReposUrl;
 
 public class CGCoinResources implements CoinResources {
 
-    private final Links delegate;
+	private final Links delegate;
 
-    public CGCoinResources(Links delegate) {
+	public CGCoinResources(Links delegate) {
 
-	this.delegate = delegate;
-    }
+		this.delegate = delegate;
+	}
 
-    public boolean equals(Object o) {
+	public boolean equals(Object o) {
 
-	return delegate.equals(o);
-    }
+		return delegate.equals(o);
+	}
 
-    @Override
-    public List<String> getAnnouncementUrl() {
+	@Override
+	public List<String> getAnnouncementUrl() {
 
-	return delegate.getAnnouncementUrl();
-    }
+		return delegate.getAnnouncementUrl();
+	}
 
-    @Override
-    public Object getBitcointalkThreadIdentifier() {
+	@Override
+	public Object getBitcointalkThreadIdentifier() {
 
-	return delegate.getBitcointalkThreadIdentifier();
-    }
+		return delegate.getBitcointalkThreadIdentifier();
+	}
 
-    @Override
-    public List<String> getBlockchainSite() {
+	@Override
+	public List<String> getBlockchainSite() {
 
-	return delegate.getBlockchainSite();
-    }
+		return delegate.getBlockchainSite();
+	}
 
-    @Override
-    public List<String> getChatUrl() {
+	@Override
+	public List<String> getChatUrl() {
 
-	return delegate.getChatUrl();
-    }
+		return delegate.getChatUrl();
+	}
 
-    @Override
-    public String getFacebookUsername() {
+	@Override
+	public String getFacebookUsername() {
 
-	return delegate.getFacebookUsername();
-    }
+		return delegate.getFacebookUsername();
+	}
 
-    @Override
-    public List<String> getHomepage() {
+	@Override
+	public List<String> getHomepage() {
 
-	return delegate.getHomepage();
-    }
+		return delegate.getHomepage();
+	}
 
-    @Override
-    public List<String> getOfficialForumUrl() {
+	@Override
+	public List<String> getOfficialForumUrl() {
 
-	return delegate.getOfficialForumUrl();
-    }
+		return delegate.getOfficialForumUrl();
+	}
 
-    @Override
-    public ReposUrl getReposUrl() {
+	@Override
+	public ReposUrl getReposUrl() {
 
-	return delegate.getReposUrl();
-    }
+		return delegate.getReposUrl();
+	}
 
-    @Override
-    public String getSubredditUrl() {
+	@Override
+	public String getSubredditUrl() {
 
-	return delegate.getSubredditUrl();
-    }
+		return delegate.getSubredditUrl();
+	}
 
-    @Override
-    public String getTelegramChannelIdentifier() {
+	@Override
+	public String getTelegramChannelIdentifier() {
 
-	return delegate.getTelegramChannelIdentifier();
-    }
+		return delegate.getTelegramChannelIdentifier();
+	}
 
-    @Override
-    public String getTwitterScreenName() {
+	@Override
+	public String getTwitterScreenName() {
 
-	return delegate.getTwitterScreenName();
-    }
+		return delegate.getTwitterScreenName();
+	}
 
-    public int hashCode() {
+	public int hashCode() {
 
-	return delegate.hashCode();
-    }
+		return delegate.hashCode();
+	}
 
-    @Override
-    public String toString() {
+	@Override
+	public String toString() {
 
-	return delegate.toString();
-    }
+		return delegate.toString();
+	}
 
 }

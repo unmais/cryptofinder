@@ -2,10 +2,10 @@ package org.instrumenteddreams.cryptofinder.coin;
 
 public interface CoinPicture {
 
-    String getLarge();
+	String getLarge();
 
-    String getSmall();
+	String getSmall();
 
-    String getThumb();
+	String getThumb();
 
 }
