@@ -1,4 +1,4 @@
-package org.instrumenteddreams.cryptofinder.coin.impl.filters;
+package org.instrumenteddreams.cryptofinder.coin.filters;
 
 import java.util.function.Predicate;
 
