@@ -4,7 +4,7 @@ import java.util.function.Predicate;
 
 import org.instrumenteddreams.cryptofinder.coin.Coin;
 import org.instrumenteddreams.cryptofinder.coin.Coin.Info;
-import org.instrumenteddreams.cryptofinder.coin.impl.filters.FilterStrategy;
+import org.instrumenteddreams.cryptofinder.coin.filters.FilterStrategy;
 
 public class SMAPriceCrossStrategy implements FilterStrategy {
 

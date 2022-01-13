@@ -3,6 +3,8 @@
  */
 package org.instrumenteddreams.cryptofinder;
 
+import static org.instrumenteddreams.cryptofinder.coin.filters.FilterStrategyFactory.StrategyId.ALTCOIN_TRADER;
+
 import java.util.List;
 import java.util.function.Predicate;
 
@@ -13,8 +15,8 @@ import org.instrumenteddreams.cryptofinder.coin.CoinOracle;
 import org.instrumenteddreams.cryptofinder.coin.CoinOracles;
 import org.instrumenteddreams.cryptofinder.coin.CoinVisualizer;
 import org.instrumenteddreams.cryptofinder.coin.CoinVisualizers;
-import org.instrumenteddreams.cryptofinder.coin.impl.filters.FilterStrategy;
-import org.instrumenteddreams.cryptofinder.coin.impl.filters.altcointrader.AltcoinTraderFilterStrategy;
+import org.instrumenteddreams.cryptofinder.coin.filters.FilterStrategy;
+import org.instrumenteddreams.cryptofinder.coin.filters.FilterStrategyFactory;
 
 import com.google.common.collect.Lists;
 
@@ -29,15 +31,14 @@ public class CryptoFinder {
 
 	private static final CoinOracle coinOracle = CoinOracles.getDefault();
 	private static final CoinVisualizer coinVisualizer = CoinVisualizers.getDefault();
-	private static final FilterStrategy filterStrategy = new AltcoinTraderFilterStrategy();
-
+	
 	public static void main(String[] args) throws InterruptedException {
 
 		List<Coin> order1SelectedCoins = Lists.newArrayList();
 
+		FilterStrategy filterStrategy = FilterStrategyFactory.buildStrategy(ALTCOIN_TRADER);
 		Predicate<Coin> order1Filters = filterStrategy.getFiltersOfOrder(1);
 		Coin.Info order1requiredInfo = filterStrategy.getInfoRequirementsForFiltersOfOrder(1);
-
 		Predicate<Coin> order2Filters = filterStrategy.getFiltersOfOrder(2);
 		Coin.Info order2requiredInfo = filterStrategy.getInfoRequirementsForFiltersOfOrder(2);
 
