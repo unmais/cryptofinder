@@ -45,7 +45,7 @@ public class CryptoFinder {
 	List<CoinBasicInfo> pageCoinInfos = Lists.newArrayList();
 	int pageNumber = 1;
 	do {
-	    pageCoinInfos.clear();
+	    pageCoinInfos.clean();
 	    pageCoinInfos = coinOracle.getCoinBasicInfos(pageNumber);
 	    System.out.println("fetched " + pageCoinInfos.size() + " coins from page #" + pageNumber);
 
