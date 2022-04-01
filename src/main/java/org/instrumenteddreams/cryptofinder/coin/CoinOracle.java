@@ -14,7 +14,7 @@ public interface CoinOracle {
 
 	void shutDown();
 
-	Coin completeCoinInfo(Coin coin, Coin.Info info);
+	Coin completeCoinInfo(Coin coin, Coin.CoinInfoType info);
 
 	int getDefaultPageSize();
 

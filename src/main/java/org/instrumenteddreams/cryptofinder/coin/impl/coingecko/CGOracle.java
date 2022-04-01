@@ -5,12 +5,12 @@ import java.util.concurrent.atomic.AtomicLong;
 import java.util.stream.Collectors;
 
 import org.instrumenteddreams.cryptofinder.coin.Coin;
+import org.instrumenteddreams.cryptofinder.coin.Coin.CoinInfoType;
 import org.instrumenteddreams.cryptofinder.coin.CoinBasicInfo;
 import org.instrumenteddreams.cryptofinder.coin.CoinChartInfo;
 import org.instrumenteddreams.cryptofinder.coin.CoinOracle;
 import org.instrumenteddreams.cryptofinder.coin.CoinOverallInfo;
 import org.instrumenteddreams.cryptofinder.coin.CoinStandardPeriod;
-import org.instrumenteddreams.cryptofinder.coin.Coin.Info;
 
 import com.google.common.base.Joiner;
 import com.litesoftwares.coingecko.constant.Currency;
@@ -116,18 +116,18 @@ public class CGOracle implements CoinOracle {
 	}
 
 	@Override
-	public Coin completeCoinInfo(Coin coin, Info info) {
+	public Coin completeCoinInfo(Coin coin, CoinInfoType info) {
 
-		if (info == Coin.Info.NONE) {
+		if (info == Coin.CoinInfoType.NONE) {
 			return coin;
 		}
-		if (info == Coin.Info.BASIC) {
+		if (info == Coin.CoinInfoType.BASIC) {
 			if (coin.getCoinBasicInfo() != null) {
 				return coin;
 			}
 			throw new UnsupportedOperationException("info type not supported");
 		}
-		if (info == Coin.Info.OVERALL) {
+		if (info == Coin.CoinInfoType.OVERALL) {
 			if (coin.getCoinOverallInfo() != null) {
 				return coin;
 			}
@@ -135,7 +135,7 @@ public class CGOracle implements CoinOracle {
 			coin.setCoinOverAllInfo(overallInfo);
 			return coin;
 		}
-		if (info == Coin.Info.CHART_OLHC_INFO_180D) {
+		if (info == Coin.CoinInfoType.CHART_OLHC_INFO_180D) {
 			if (coin.getCoinChartInfo() != null) {
 				return coin;
 			}

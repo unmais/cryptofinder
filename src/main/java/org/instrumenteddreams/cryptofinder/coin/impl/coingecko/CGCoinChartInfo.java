@@ -4,7 +4,7 @@ import java.util.List;
 import java.util.Objects;
 
 import org.instrumenteddreams.cryptofinder.coin.CoinChartInfo;
-import org.instrumenteddreams.cryptofinder.coin.impl.OhlcSampleInfoImpl;
+import org.instrumenteddreams.cryptofinder.coin.impl.OhlcRecordImpl;
 
 import com.beust.jcommander.internal.Lists;
 import com.litesoftwares.coingecko.domain.Coins.MarketChart;
@@ -16,13 +16,13 @@ public class CGCoinChartInfo implements CoinChartInfo {
 
 	private MarketChart chartInfoDelegate;
 
-	private List<OhlcSampleInfo> ohlcInfos;
+	private List<OhlcRecord> ohlcInfos;
 
 	public static CGCoinChartInfo fromChartData(MarketChart chartInfoDelegate, OhlcSample[] ohlcSamples, int days) {
 
 		int numberOfOhlcs = ohlcSamples.length;
 
-		List<OhlcSampleInfo> ohlcInfos = Lists.newArrayList(numberOfOhlcs);
+		List<OhlcRecord> ohlcInfos = Lists.newArrayList(numberOfOhlcs);
 
 		int indexOfFirstOhlcInChar = findFirstTimeOccurrenceIndex(ohlcSamples[0].getTime(),
 				chartInfoDelegate.getPrices(), OHLC_DATA_PERIOD_IN_DAYS);
@@ -43,20 +43,20 @@ public class CGCoinChartInfo implements CoinChartInfo {
 	}
 
 	@Override
-	public List<OhlcSampleInfo> getOhlcInfos() {
+	public List<OhlcRecord> getOhlcRecords() {
 
 		return ohlcInfos;
 	}
 
-	private CGCoinChartInfo(List<OhlcSampleInfo> ohlcInfos) {
+	private CGCoinChartInfo(List<OhlcRecord> ohlcInfos) {
 
 		this.ohlcInfos = ohlcInfos;
 	}
 
-	private static OhlcSampleInfoImpl buildOhlcInfo(OhlcSample ohlcSample, List<String> closingCap,
+	private static OhlcRecordImpl buildOhlcInfo(OhlcSample ohlcSample, List<String> closingCap,
 			List<String> closingVolume) {
 
-		return new OhlcSampleInfoImpl(Long.valueOf(ohlcSample.getTime()), Double.valueOf(ohlcSample.getOpen()),
+		return new OhlcRecordImpl(Long.valueOf(ohlcSample.getTime()), Double.valueOf(ohlcSample.getOpen()),
 				Double.valueOf(ohlcSample.getHigh()), Double.valueOf(ohlcSample.getLow()),
 				Double.valueOf(ohlcSample.getClose()), Double.valueOf(closingCap.get(1)),
 				Double.valueOf(closingVolume.get(1)));

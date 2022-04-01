@@ -3,31 +3,20 @@ package org.instrumenteddreams.cryptofinder.coin.impl.filters.ta;
 import java.util.function.Predicate;
 
 import org.instrumenteddreams.cryptofinder.coin.Coin;
-import org.instrumenteddreams.cryptofinder.coin.Coin.Info;
-import org.instrumenteddreams.cryptofinder.coin.filters.FilterStrategy;
+import org.instrumenteddreams.cryptofinder.coin.Coin.CoinInfoType;
 
-public class SMAPriceCrossStrategy implements FilterStrategy {
+public class SMAPriceCrossCoinFilter {
 
 	private static final String COIN_BAR_CHART_NAME_SUFFIX = "_bar_chart";
 
-	@Override
-	public Info getInfoRequirementsForFiltersOfOrder(int order) {
+	public CoinInfoType getInfoRequirementsForFiltersOfOrder() {
 
-		if (order == 2) {
-			return Coin.Info.CHART_OLHC_INFO_180D;
-		}
-
-		return Coin.Info.NONE;
+		return CoinInfoType.CHART_OLHC_INFO_180D;
 	}
 
-	@Override
-	public Predicate<Coin> getFiltersOfOrder(int order) {
+	public Predicate<Coin> asPredicate() {
 
-		if (order == 2) {
-			return coin -> isPassingOrder2Filters(coin);
-		}
-
-		return coin -> true;
+		return coin -> isPassingOrder2Filters(coin);
 	}
 
 	private boolean isPassingOrder2Filters(Coin coin) {

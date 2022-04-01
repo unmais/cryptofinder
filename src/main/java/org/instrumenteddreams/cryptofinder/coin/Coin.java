@@ -2,7 +2,7 @@ package org.instrumenteddreams.cryptofinder.coin;
 
 public interface Coin {
 
-	static enum Info {
+	static enum CoinInfoType {
 		BASIC, OVERALL, MARKET, CHART_OLHC_INFO_180D, NONE
 	}
 
@@ -22,16 +22,16 @@ public interface Coin {
 
 	void setCoinChartInfo(CoinChartInfo info);
 
-	default void assertHasInfo(Info info) {
+	default void assertHasInfo(CoinInfoType info) {
 
 		boolean missingInfo = false;
-		if (info == Info.BASIC) {
+		if (info == CoinInfoType.BASIC) {
 			missingInfo = this.getCoinBasicInfo() == null;
 		}
-		if (info == Info.OVERALL) {
+		if (info == CoinInfoType.OVERALL) {
 			missingInfo = this.getCoinOverallInfo() == null;
 		}
-		if (info == Info.MARKET) {
+		if (info == CoinInfoType.MARKET) {
 			missingInfo = this.getCoinMarketInfo() == null;
 		}
 		if (missingInfo) {
