@@ -5,7 +5,7 @@ import java.math.BigDecimal;
 import com.litesoftwares.coingecko.domain.Coins.CoinData.Roi;
 import com.litesoftwares.coingecko.domain.Coins.CoinData.SparklineIn7d;
 
-public interface CoinInfoBasic {
+public interface CFCoinInfoBasic {
 
 	double getAth();
 

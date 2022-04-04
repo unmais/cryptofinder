@@ -2,17 +2,17 @@ package org.instrumenteddreams.cryptofinder.coin;
 
 import java.util.List;
 
-public interface CoinOracle {
+public interface CFCoinOracle {
 
 	void start();
 
 	boolean isStarted();
 
-	List<Coin> getAllCoins(int pageNumber);
+	List<CFCoin> getAllCoins(int pageNumber);
 
 	void shutDown();
 
-	Coin completeCoinInfo(Coin coin, Coin.CoinInfoType info);
+	CFCoin completeCoinInfo(CFCoin coin, CFCoin.CoinInfoType info);
 
 	int getDefaultPageSize();
 

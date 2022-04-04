@@ -4,8 +4,8 @@ import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.Optional;
 
-import org.instrumenteddreams.cryptofinder.coin.CoinInfoBasic;
-import org.instrumenteddreams.cryptofinder.coin.CoinStandardPeriod;
+import org.instrumenteddreams.cryptofinder.coin.CFCoinInfoBasic;
+import org.instrumenteddreams.cryptofinder.coin.CFCoinStandardPeriod;
 import org.instrumenteddreams.cryptofinder.math.timeseries.UnivariateTimeSeries;
 import org.instrumenteddreams.cryptofinder.math.timeseries.predicates.TimeSeriesTester;
 import org.instrumenteddreams.cryptofinder.utils.CoinUtils;
@@ -19,12 +19,12 @@ import org.instrumenteddreams.cryptofinder.utils.DateTimeUtils;
  */
 public class CommonPredicates {
 
-	public static boolean isPriceInDollarRange(CoinInfoBasic coin, double min, double max) {
+	public static boolean isPriceInDollarRange(CFCoinInfoBasic coin, double min, double max) {
 
 		return coin.getCurrentPrice() >= min && coin.getCurrentPrice() <= max;
 	}
 
-	public static boolean isCurrentValuationUnknownOrMoreThanPercentageOfDillutedValuation(CoinInfoBasic coin,
+	public static boolean isCurrentValuationUnknownOrMoreThanPercentageOfDillutedValuation(CFCoinInfoBasic coin,
 			double percentage) {
 
 		if (coin.getFullyDilutedValuation() == null) {
@@ -38,7 +38,7 @@ public class CommonPredicates {
 		return comparisonResult > 0;
 	}
 
-	public static boolean isCirculatingMarketCapUnknownOrMoreThanPercentageOfTotalCap(CoinInfoBasic coin,
+	public static boolean isCirculatingMarketCapUnknownOrMoreThanPercentageOfTotalCap(CFCoinInfoBasic coin,
 			double percentage) {
 
 		if (coin.getCirculatingSupply() <= 0) {
@@ -47,7 +47,7 @@ public class CommonPredicates {
 		return coin.getCirculatingSupply() * coin.getCurrentPrice() > percentage * coin.getMarketCap();
 	}
 
-	public static boolean isAtlHappenedBeforeLatestPeriod(CoinInfoBasic coin, CoinStandardPeriod latestPeriod) {
+	public static boolean isAtlHappenedBeforeLatestPeriod(CFCoinInfoBasic coin, CFCoinStandardPeriod latestPeriod) {
 
 		long latestPeriodStartEpochTime = CoinUtils.getLatestPeriodStartEpochTime(coin, latestPeriod);
 		long atlEpochTime = CoinUtils.getAtlEpochTime(coin);
@@ -55,7 +55,7 @@ public class CommonPredicates {
 		return latestPeriodStartEpochTime > atlEpochTime;
 	}
 
-	public static boolean isAthHappenedBeforeLatestPeriod(CoinInfoBasic coin, CoinStandardPeriod latestPeriod) {
+	public static boolean isAthHappenedBeforeLatestPeriod(CFCoinInfoBasic coin, CFCoinStandardPeriod latestPeriod) {
 
 		long latestPeriodStartEpochTime = CoinUtils.getLatestPeriodStartEpochTime(coin, latestPeriod);
 		long atlEpochTime = CoinUtils.getAtlEpochTime(coin);
@@ -63,13 +63,13 @@ public class CommonPredicates {
 		return latestPeriodStartEpochTime > atlEpochTime;
 	}
 
-	public static boolean isAtlHappenedBeforeDateTime(CoinInfoBasic coin, LocalDateTime dateTime) {
+	public static boolean isAtlHappenedBeforeDateTime(CFCoinInfoBasic coin, LocalDateTime dateTime) {
 
 		LocalDateTime atlDateTime = DateTimeUtils.parseLocalDateTime(coin.getAtlDate());
 		return dateTime.isAfter(atlDateTime);
 	}
 
-	public static boolean isGoinUpInLatestPeriod(CoinInfoBasic coin, CoinStandardPeriod latestPeriod) {
+	public static boolean isGoinUpInLatestPeriod(CFCoinInfoBasic coin, CFCoinStandardPeriod latestPeriod) {
 
 		Optional<UnivariateTimeSeries> priceLatestPeriodSeries = CoinUtils
 				.getStandardPriceTimeSeriesForLatestPeriod(coin, latestPeriod);

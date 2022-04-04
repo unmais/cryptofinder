@@ -4,13 +4,13 @@ import java.util.List;
 import java.util.concurrent.atomic.AtomicLong;
 import java.util.stream.Collectors;
 
-import org.instrumenteddreams.cryptofinder.coin.Coin;
-import org.instrumenteddreams.cryptofinder.coin.Coin.CoinInfoType;
-import org.instrumenteddreams.cryptofinder.coin.CoinChartInfo;
-import org.instrumenteddreams.cryptofinder.coin.CoinImpl;
-import org.instrumenteddreams.cryptofinder.coin.CoinOracle;
-import org.instrumenteddreams.cryptofinder.coin.CoinOverallInfo;
-import org.instrumenteddreams.cryptofinder.coin.CoinStandardPeriod;
+import org.instrumenteddreams.cryptofinder.coin.CFCoin;
+import org.instrumenteddreams.cryptofinder.coin.CFCoin.CoinInfoType;
+import org.instrumenteddreams.cryptofinder.coin.CFCoinChartInfo;
+import org.instrumenteddreams.cryptofinder.coin.CFCoinImpl;
+import org.instrumenteddreams.cryptofinder.coin.CFCoinOracle;
+import org.instrumenteddreams.cryptofinder.coin.CFCoinOverallInfo;
+import org.instrumenteddreams.cryptofinder.coin.CFCoinStandardPeriod;
 
 import com.google.common.base.Joiner;
 import com.litesoftwares.coingecko.constant.Currency;
@@ -20,7 +20,7 @@ import com.litesoftwares.coingecko.domain.Coins.MarketChart;
 import com.litesoftwares.coingecko.domain.Coins.OhlcSample;
 import com.litesoftwares.coingecko.impl.CoinGeckoApiClientImpl;
 
-public class CGOracle implements CoinOracle {
+public class CGOracle implements CFCoinOracle {
 
 	private static final int CHAR_RANGE_IN_DAYS = 180;
 
@@ -39,7 +39,7 @@ public class CGOracle implements CoinOracle {
 	private boolean started = false;
 
 	static {
-		ALL_COIN_STANDARD_PERIODS = Joiner.on(',').join(CoinStandardPeriod.values());
+		ALL_COIN_STANDARD_PERIODS = Joiner.on(',').join(CFCoinStandardPeriod.values());
 
 	}
 
@@ -52,7 +52,7 @@ public class CGOracle implements CoinOracle {
 	}
 
 	@Override
-	public List<Coin> getAllCoins(int pageNumber) {
+	public List<CFCoin> getAllCoins(int pageNumber) {
 
 		return getCoinBasicInfos(Currency.USD, null, null, null, COINS_LIST_PAGE_SIZE, pageNumber, false,
 				ALL_COIN_STANDARD_PERIODS);
@@ -71,30 +71,30 @@ public class CGOracle implements CoinOracle {
 	}
 
 	@Override
-	public Coin completeCoinInfo(Coin coin, CoinInfoType info) {
+	public CFCoin completeCoinInfo(CFCoin coin, CoinInfoType info) {
 
-		if (info == Coin.CoinInfoType.NONE) {
+		if (info == CFCoin.CoinInfoType.NONE) {
 			return coin;
 		}
-		if (info == Coin.CoinInfoType.BASIC) {
+		if (info == CFCoin.CoinInfoType.BASIC) {
 			if (coin.getCoinBasicInfo() != null) {
 				return coin;
 			}
 			throw new UnsupportedOperationException("info type not supported");
 		}
-		if (info == Coin.CoinInfoType.OVERALL) {
+		if (info == CFCoin.CoinInfoType.OVERALL) {
 			if (coin.getCoinOverallInfo() != null) {
 				return coin;
 			}
-			CoinOverallInfo overallInfo = getCoinOverallInfo(coin.getId());
+			CFCoinOverallInfo overallInfo = getCoinOverallInfo(coin.getId());
 			coin.setCoinOverAllInfo(overallInfo);
 			return coin;
 		}
-		if (info == Coin.CoinInfoType.CHART_OLHC_INFO_180D) {
+		if (info == CFCoin.CoinInfoType.CHART_OLHC_INFO_180D) {
 			if (coin.getCoinChartInfo() != null) {
 				return coin;
 			}
-			CoinChartInfo chartInfo = getCoinChartInfo(coin.getId(), CHAR_RANGE_IN_DAYS);
+			CFCoinChartInfo chartInfo = getCoinChartInfo(coin.getId(), CHAR_RANGE_IN_DAYS);
 			coin.setCoinChartInfo(chartInfo);
 			return coin;
 		}
@@ -126,12 +126,12 @@ public class CGOracle implements CoinOracle {
 		lastRequestTime.set(System.currentTimeMillis());
 	}
 
-	private CoinOverallInfo getCoinOverallInfo(String id) {
+	private CFCoinOverallInfo getCoinOverallInfo(String id) {
 
 		return getCoinOverallInfo(id, true, true, true, true, true, true);
 	}
 
-	private CoinChartInfo getCoinChartInfo(String id, int days) {
+	private CFCoinChartInfo getCoinChartInfo(String id, int days) {
 
 		if (days != CHAR_RANGE_IN_DAYS) {
 			throw new IllegalArgumentException("only " + CHAR_RANGE_IN_DAYS + " days ranges supported");
@@ -149,7 +149,7 @@ public class CGOracle implements CoinOracle {
 		return CGCoinChartInfo.fromChartData(chartData, ohlcData, days);
 	}
 
-	private CoinOverallInfo getCoinOverallInfo(String id, boolean localization, boolean tickers, boolean marketData,
+	private CFCoinOverallInfo getCoinOverallInfo(String id, boolean localization, boolean tickers, boolean marketData,
 			boolean communityData, boolean developerData, boolean sparkline) {
 
 		waitIfNeeded();
@@ -159,7 +159,7 @@ public class CGOracle implements CoinOracle {
 		return new CGOCoinOverallInfo(conFullData);
 	}
 
-	private List<Coin> getCoinBasicInfos(String vsCurrency, String ids, String category, String order, Integer perPage,
+	private List<CFCoin> getCoinBasicInfos(String vsCurrency, String ids, String category, String order, Integer perPage,
 			Integer page, boolean sparkline, String priceChangePercentage) {
 
 		waitIfNeeded();
@@ -167,7 +167,7 @@ public class CGOracle implements CoinOracle {
 				sparkline, priceChangePercentage);
 		setLastRequestTime();
 		return coinMarkets.stream().map(coinMarket -> new CGCoinBasicInfo(coinMarket))
-				.map(coinInfo -> new CoinImpl(coinInfo)).collect(Collectors.toList());
+				.map(coinInfo -> new CFCoinImpl(coinInfo)).collect(Collectors.toList());
 	}
 
 }

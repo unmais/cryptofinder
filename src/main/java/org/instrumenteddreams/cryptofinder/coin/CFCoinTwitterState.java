@@ -1,12 +1,12 @@
 package org.instrumenteddreams.cryptofinder.coin;
 
-public class CoinTwitterState {
+public class CFCoinTwitterState {
 
 	private String twitterName;
 	private int numberOfFollowers;
 	private int numberOfFollowersInLast30Days;
 
-	public CoinTwitterState(String twitterName, int numberOfFollowers, int numberOfFollowersInLast30Days) {
+	public CFCoinTwitterState(String twitterName, int numberOfFollowers, int numberOfFollowersInLast30Days) {
 
 		this.twitterName = twitterName;
 		this.numberOfFollowers = numberOfFollowers;

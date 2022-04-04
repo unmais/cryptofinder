@@ -2,8 +2,8 @@ package org.instrumenteddreams.cryptofinder.coin.impl.filters.ta;
 
 import java.util.function.Predicate;
 
-import org.instrumenteddreams.cryptofinder.coin.Coin;
-import org.instrumenteddreams.cryptofinder.coin.Coin.CoinInfoType;
+import org.instrumenteddreams.cryptofinder.coin.CFCoin;
+import org.instrumenteddreams.cryptofinder.coin.CFCoin.CoinInfoType;
 
 public class SMAPriceCrossCoinFilter {
 
@@ -14,12 +14,12 @@ public class SMAPriceCrossCoinFilter {
 		return CoinInfoType.CHART_OLHC_INFO_180D;
 	}
 
-	public Predicate<Coin> asPredicate() {
+	public Predicate<CFCoin> asPredicate() {
 
 		return coin -> isPassingOrder2Filters(coin);
 	}
 
-	private boolean isPassingOrder2Filters(Coin coin) {
+	private boolean isPassingOrder2Filters(CFCoin coin) {
 
 		throw new UnsupportedOperationException();
 //	BarSeries series = new BaseBarSeriesBuilder().withName(coin.getId() + COIN_BAR_CHART_NAME_SUFFIX).build();

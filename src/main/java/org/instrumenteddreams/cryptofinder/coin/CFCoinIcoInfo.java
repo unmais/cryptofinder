@@ -2,7 +2,7 @@ package org.instrumenteddreams.cryptofinder.coin;
 
 import com.litesoftwares.coingecko.domain.Coins.CoinData.Links_;
 
-public interface CoinIcoInfo {
+public interface CFCoinIcoInfo {
 
 	String getAcceptingCurrencies();
 

@@ -1,8 +1,8 @@
 package org.instrumenteddreams.cryptofinder.coin;
 
-import org.instrumenteddreams.cryptofinder.coin.CoinChartInfo.OhlcRecord;
+import org.instrumenteddreams.cryptofinder.coin.CFCoinChartInfo.OhlcRecord;
 
-public class OhlcRecordImpl implements OhlcRecord {
+public class CFOhlcRecordImpl implements OhlcRecord {
 
 	private final long epochTime;
 
@@ -18,7 +18,7 @@ public class OhlcRecordImpl implements OhlcRecord {
 
 	private final double closeMarketCap;
 
-	public OhlcRecordImpl(long epochTime, double open, double high, double low, double close, double closeVolume,
+	public CFOhlcRecordImpl(long epochTime, double open, double high, double low, double close, double closeVolume,
 			double closeMarketCap) {
 
 		super();

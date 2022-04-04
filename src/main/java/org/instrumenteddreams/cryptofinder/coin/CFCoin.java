@@ -1,6 +1,6 @@
 package org.instrumenteddreams.cryptofinder.coin;
 
-public interface Coin {
+public interface CFCoin {
 
 	static enum CoinInfoType {
 		BASIC, OVERALL, MARKET, CHART_OLHC_INFO_180D, NONE
@@ -8,19 +8,19 @@ public interface Coin {
 
 	String getId();
 
-	CoinInfoBasic getCoinBasicInfo();
+	CFCoinInfoBasic getCoinBasicInfo();
 
-	CoinOverallInfo getCoinOverallInfo();
+	CFCoinOverallInfo getCoinOverallInfo();
 
-	CoinMarketInfo getCoinMarketInfo();
+	CFCoinMarketInfo getCoinMarketInfo();
 
-	CoinChartInfo getCoinChartInfo();
+	CFCoinChartInfo getCoinChartInfo();
 
-	void setCoinOverAllInfo(CoinOverallInfo info);
+	void setCoinOverAllInfo(CFCoinOverallInfo info);
 
-	void setCoinMarketInfo(CoinMarketInfo info);
+	void setCoinMarketInfo(CFCoinMarketInfo info);
 
-	void setCoinChartInfo(CoinChartInfo info);
+	void setCoinChartInfo(CFCoinChartInfo info);
 
 	default void assertHasInfo(CoinInfoType info) {
 

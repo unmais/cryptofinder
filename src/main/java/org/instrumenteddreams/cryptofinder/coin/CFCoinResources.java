@@ -4,7 +4,7 @@ import java.util.List;
 
 import com.litesoftwares.coingecko.domain.Coins.CoinData.ReposUrl;
 
-public interface CoinResources {
+public interface CFCoinResources {
 
 	List<String> getAnnouncementUrl();
 

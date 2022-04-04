@@ -1,10 +1,10 @@
 package org.instrumenteddreams.cryptofinder.coin.impl.coingecko;
 
-import org.instrumenteddreams.cryptofinder.coin.CoinOtherScores;
+import org.instrumenteddreams.cryptofinder.coin.CFCoinOtherScores;
 
 import com.litesoftwares.coingecko.domain.Coins.CoinData.PublicInterestStats;
 
-public class CGCoinOtherScores implements CoinOtherScores {
+public class CGCoinOtherScores implements CFCoinOtherScores {
 
 	private final PublicInterestStats delegate;
 

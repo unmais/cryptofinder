@@ -1,10 +1,10 @@
 package org.instrumenteddreams.cryptofinder.coin.impl.coingecko;
 
-import org.instrumenteddreams.cryptofinder.coin.CoinCommunityInfo;
+import org.instrumenteddreams.cryptofinder.coin.CFCoinCommunityInfo;
 
 import com.litesoftwares.coingecko.domain.Coins.CoinData.CommunityData;
 
-public class CGCoinCommunityInfo implements CoinCommunityInfo {
+public class CGCoinCommunityInfo implements CFCoinCommunityInfo {
 
 	private final CommunityData delegate;
 

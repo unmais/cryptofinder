@@ -2,12 +2,12 @@ package org.instrumenteddreams.cryptofinder.coin.impl.coingecko;
 
 import java.util.Map;
 
-import org.instrumenteddreams.cryptofinder.coin.CoinMarketInfo;
+import org.instrumenteddreams.cryptofinder.coin.CFCoinMarketInfo;
 
 import com.litesoftwares.coingecko.domain.Coins.MarketData;
 import com.litesoftwares.coingecko.domain.Coins.CoinData.Roi;
 
-public class CGCoinMarketInfo implements CoinMarketInfo {
+public class CGCoinMarketInfo implements CFCoinMarketInfo {
 
 	private final MarketData delegate;
 

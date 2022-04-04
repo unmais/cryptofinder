@@ -1,11 +1,11 @@
 package org.instrumenteddreams.cryptofinder.coin.impl.selenium;
 
-import org.instrumenteddreams.cryptofinder.coin.Coin;
-import org.instrumenteddreams.cryptofinder.coin.CoinVisualizer;
+import org.instrumenteddreams.cryptofinder.coin.CFCoin;
+import org.instrumenteddreams.cryptofinder.coin.CFCoinVisualizer;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
-public class SeleniumBrowserVisualizer implements CoinVisualizer {
+public class SeleniumBrowserVisualizer implements CFCoinVisualizer {
 
 	public final String baseUrl;
 
@@ -25,7 +25,7 @@ public class SeleniumBrowserVisualizer implements CoinVisualizer {
 	}
 
 	@Override
-	public void visualize(Coin coin) {
+	public void visualize(CFCoin coin) {
 
 		openCoinInBrowser(coin.getId());
 	}

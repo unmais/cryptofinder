@@ -8,7 +8,7 @@ import java.time.ZoneOffset;
 import java.time.ZonedDateTime;
 import java.time.format.DateTimeFormatter;
 
-import org.instrumenteddreams.cryptofinder.coin.CoinStandardPeriod;
+import org.instrumenteddreams.cryptofinder.coin.CFCoinStandardPeriod;
 
 public class DateTimeUtils {
 
@@ -36,7 +36,7 @@ public class DateTimeUtils {
 		return zoneId.getRules().getOffset(Instant.now());
 	}
 
-	public static long getPeriodStartEpochTime(LocalDateTime nowDatetime, CoinStandardPeriod period) {
+	public static long getPeriodStartEpochTime(LocalDateTime nowDatetime, CFCoinStandardPeriod period) {
 
 		return toEpochTime(nowDatetime.minus(period.getDuration(), period.getTimeUnit()));
 	}

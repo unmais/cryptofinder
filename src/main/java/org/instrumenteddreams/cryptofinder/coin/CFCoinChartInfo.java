@@ -2,7 +2,7 @@ package org.instrumenteddreams.cryptofinder.coin;
 
 import java.util.List;
 
-public interface CoinChartInfo {
+public interface CFCoinChartInfo {
 
 	interface OhlcRecord {
 

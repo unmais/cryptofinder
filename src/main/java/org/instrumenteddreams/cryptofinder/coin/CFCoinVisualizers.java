@@ -3,9 +3,9 @@ package org.instrumenteddreams.cryptofinder.coin;
 import org.instrumenteddreams.cryptofinder.coin.impl.coingecko.CGConstants;
 import org.instrumenteddreams.cryptofinder.coin.impl.selenium.SeleniumBrowserVisualizer;
 
-public class CoinVisualizers {
+public class CFCoinVisualizers {
 
-	public static CoinVisualizer getDefault() {
+	public static CFCoinVisualizer getDefault() {
 
 		return new SeleniumBrowserVisualizer(CGConstants.COIN_GECKO_COIN_BASE_URL);
 	}

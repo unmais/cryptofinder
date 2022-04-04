@@ -4,7 +4,7 @@ import java.util.List;
 
 import com.litesoftwares.coingecko.domain.Coins.CoinData.CodeAdditionsDeletions4Weeks;
 
-public interface CoinDeveloperInfo {
+public interface CFCoinDeveloperInfo {
 
 	long getClosedIssues();
 

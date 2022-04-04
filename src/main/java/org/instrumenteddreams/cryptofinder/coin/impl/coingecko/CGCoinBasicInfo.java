@@ -2,13 +2,13 @@ package org.instrumenteddreams.cryptofinder.coin.impl.coingecko;
 
 import java.math.BigDecimal;
 
-import org.instrumenteddreams.cryptofinder.coin.CoinInfoBasic;
+import org.instrumenteddreams.cryptofinder.coin.CFCoinInfoBasic;
 
 import com.litesoftwares.coingecko.domain.Coins.CoinMarkets;
 import com.litesoftwares.coingecko.domain.Coins.CoinData.Roi;
 import com.litesoftwares.coingecko.domain.Coins.CoinData.SparklineIn7d;
 
-public class CGCoinBasicInfo implements CoinInfoBasic {
+public class CGCoinBasicInfo implements CFCoinInfoBasic {
 
 	private CoinMarkets coinMarketsDelegate;
 

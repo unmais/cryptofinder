@@ -3,19 +3,19 @@ package org.instrumenteddreams.cryptofinder.coin.impl.coingecko;
 import java.util.List;
 import java.util.Map;
 
-import org.instrumenteddreams.cryptofinder.coin.CoinCommunityInfo;
-import org.instrumenteddreams.cryptofinder.coin.CoinDeveloperInfo;
-import org.instrumenteddreams.cryptofinder.coin.CoinIcoInfo;
-import org.instrumenteddreams.cryptofinder.coin.CoinOtherScores;
-import org.instrumenteddreams.cryptofinder.coin.CoinOverallInfo;
-import org.instrumenteddreams.cryptofinder.coin.CoinPicture;
-import org.instrumenteddreams.cryptofinder.coin.CoinResources;
+import org.instrumenteddreams.cryptofinder.coin.CFCoinCommunityInfo;
+import org.instrumenteddreams.cryptofinder.coin.CFCoinDeveloperInfo;
+import org.instrumenteddreams.cryptofinder.coin.CFCoinIcoInfo;
+import org.instrumenteddreams.cryptofinder.coin.CFCoinOtherScores;
+import org.instrumenteddreams.cryptofinder.coin.CFCoinOverallInfo;
+import org.instrumenteddreams.cryptofinder.coin.CFCoinPicture;
+import org.instrumenteddreams.cryptofinder.coin.CFCoinResources;
 
 import com.litesoftwares.coingecko.domain.Coins.CoinFullData;
 import com.litesoftwares.coingecko.domain.Coins.MarketData;
 import com.litesoftwares.coingecko.domain.Shared.Ticker;
 
-public class CGOCoinOverallInfo implements CoinOverallInfo {
+public class CGOCoinOverallInfo implements CFCoinOverallInfo {
 
 	private final CoinFullData delegate;
 
@@ -60,7 +60,7 @@ public class CGOCoinOverallInfo implements CoinOverallInfo {
 		return delegate.getCoingeckoScore();
 	}
 
-	public CoinCommunityInfo getCommunityInfo() {
+	public CFCoinCommunityInfo getCommunityInfo() {
 
 		return new CGCoinCommunityInfo(delegate.getCommunityData());
 	}
@@ -85,7 +85,7 @@ public class CGOCoinOverallInfo implements CoinOverallInfo {
 		return delegate.getDescription();
 	}
 
-	public CoinDeveloperInfo getDeveloperInfo() {
+	public CFCoinDeveloperInfo getDeveloperInfo() {
 
 		return new CGCoinDeveloperInfo(delegate.getDeveloperData());
 	}
@@ -105,7 +105,7 @@ public class CGOCoinOverallInfo implements CoinOverallInfo {
 		return delegate.getHashingAlgorithm();
 	}
 
-	public CoinIcoInfo getIcoInfo() {
+	public CFCoinIcoInfo getIcoInfo() {
 
 		return new CGCoinIcoInfo(delegate.getIcoData());
 	}
@@ -115,7 +115,7 @@ public class CGOCoinOverallInfo implements CoinOverallInfo {
 		return delegate.getId();
 	}
 
-	public CoinPicture getPicture() {
+	public CFCoinPicture getPicture() {
 
 		return new CGCoinPicture(delegate.getImage());
 	}
@@ -125,7 +125,7 @@ public class CGOCoinOverallInfo implements CoinOverallInfo {
 		return delegate.getLastUpdated();
 	}
 
-	public CoinResources getResources() {
+	public CFCoinResources getResources() {
 
 		return new CGCoinResources(delegate.getLinks());
 	}
@@ -165,7 +165,7 @@ public class CGOCoinOverallInfo implements CoinOverallInfo {
 		return delegate.getPublicInterestScore();
 	}
 
-	public CoinOtherScores getOtherScores() {
+	public CFCoinOtherScores getOtherScores() {
 
 		return new CGCoinOtherScores(delegate.getPublicInterestStats());
 	}

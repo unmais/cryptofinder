@@ -1,10 +1,10 @@
 package org.instrumenteddreams.cryptofinder.coin.impl.coingecko;
 
-import org.instrumenteddreams.cryptofinder.coin.CoinPicture;
+import org.instrumenteddreams.cryptofinder.coin.CFCoinPicture;
 
 import com.litesoftwares.coingecko.domain.Shared.Image;
 
-public class CGCoinPicture implements CoinPicture {
+public class CGCoinPicture implements CFCoinPicture {
 
 	private final Image delegate;
 

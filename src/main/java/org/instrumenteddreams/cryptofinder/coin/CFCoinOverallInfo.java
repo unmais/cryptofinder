@@ -6,7 +6,7 @@ import java.util.Map;
 import com.litesoftwares.coingecko.domain.Coins.MarketData;
 import com.litesoftwares.coingecko.domain.Shared.Ticker;
 
-public interface CoinOverallInfo {
+public interface CFCoinOverallInfo {
 
 	List<String> getAdditionalNotices();
 
@@ -20,7 +20,7 @@ public interface CoinOverallInfo {
 
 	double getCoingeckoScore();
 
-	CoinCommunityInfo getCommunityInfo();
+	CFCoinCommunityInfo getCommunityInfo();
 
 	double getCommunityScore();
 
@@ -30,7 +30,7 @@ public interface CoinOverallInfo {
 
 	Map<String, String> getDescription();
 
-	CoinDeveloperInfo getDeveloperInfo();
+	CFCoinDeveloperInfo getDeveloperInfo();
 
 	double getDeveloperScore();
 
@@ -38,11 +38,11 @@ public interface CoinOverallInfo {
 
 	String getHashingAlgorithm();
 
-	CoinIcoInfo getIcoInfo();
+	CFCoinIcoInfo getIcoInfo();
 
-	CoinPicture getPicture();
+	CFCoinPicture getPicture();
 
-	CoinResources getResources();
+	CFCoinResources getResources();
 
 	double getLiquidityScore();
 
@@ -54,7 +54,7 @@ public interface CoinOverallInfo {
 
 	double getPublicInterestScore();
 
-	CoinOtherScores getOtherScores();
+	CFCoinOtherScores getOtherScores();
 
 	String getPublicNotice();
 

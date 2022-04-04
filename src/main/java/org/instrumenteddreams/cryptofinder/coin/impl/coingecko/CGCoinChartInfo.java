@@ -3,14 +3,14 @@ package org.instrumenteddreams.cryptofinder.coin.impl.coingecko;
 import java.util.List;
 import java.util.Objects;
 
-import org.instrumenteddreams.cryptofinder.coin.CoinChartInfo;
-import org.instrumenteddreams.cryptofinder.coin.OhlcRecordImpl;
+import org.instrumenteddreams.cryptofinder.coin.CFCoinChartInfo;
+import org.instrumenteddreams.cryptofinder.coin.CFOhlcRecordImpl;
 
 import com.beust.jcommander.internal.Lists;
 import com.litesoftwares.coingecko.domain.Coins.MarketChart;
 import com.litesoftwares.coingecko.domain.Coins.OhlcSample;
 
-public class CGCoinChartInfo implements CoinChartInfo {
+public class CGCoinChartInfo implements CFCoinChartInfo {
 
 	private static final int OHLC_DATA_PERIOD_IN_DAYS = 4;
 
@@ -53,10 +53,10 @@ public class CGCoinChartInfo implements CoinChartInfo {
 		this.ohlcInfos = ohlcInfos;
 	}
 
-	private static OhlcRecordImpl buildOhlcInfo(OhlcSample ohlcSample, List<String> closingCap,
+	private static CFOhlcRecordImpl buildOhlcInfo(OhlcSample ohlcSample, List<String> closingCap,
 			List<String> closingVolume) {
 
-		return new OhlcRecordImpl(Long.valueOf(ohlcSample.getTime()), Double.valueOf(ohlcSample.getOpen()),
+		return new CFOhlcRecordImpl(Long.valueOf(ohlcSample.getTime()), Double.valueOf(ohlcSample.getOpen()),
 				Double.valueOf(ohlcSample.getHigh()), Double.valueOf(ohlcSample.getLow()),
 				Double.valueOf(ohlcSample.getClose()), Double.valueOf(closingCap.get(1)),
 				Double.valueOf(closingVolume.get(1)));

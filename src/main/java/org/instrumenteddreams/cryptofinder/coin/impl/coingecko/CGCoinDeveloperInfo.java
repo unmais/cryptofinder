@@ -2,12 +2,12 @@ package org.instrumenteddreams.cryptofinder.coin.impl.coingecko;
 
 import java.util.List;
 
-import org.instrumenteddreams.cryptofinder.coin.CoinDeveloperInfo;
+import org.instrumenteddreams.cryptofinder.coin.CFCoinDeveloperInfo;
 
 import com.litesoftwares.coingecko.domain.Coins.CoinData.CodeAdditionsDeletions4Weeks;
 import com.litesoftwares.coingecko.domain.Coins.CoinData.DeveloperData;
 
-public class CGCoinDeveloperInfo implements CoinDeveloperInfo {
+public class CGCoinDeveloperInfo implements CFCoinDeveloperInfo {
 
 	private final DeveloperData developerData;
 

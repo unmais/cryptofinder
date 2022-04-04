@@ -2,12 +2,12 @@ package org.instrumenteddreams.cryptofinder.coin.impl.filters;
 
 import java.util.function.Predicate;
 
-import org.instrumenteddreams.cryptofinder.coin.Coin;
+import org.instrumenteddreams.cryptofinder.coin.CFCoin;
 
-public class MoneyFlowIndexInRangeFilter implements Predicate<Coin> {
+public class MoneyFlowIndexInRangeFilter implements Predicate<CFCoin> {
 
 	@Override
-	public boolean test(Coin coin) {
+	public boolean test(CFCoin coin) {
 		
 		
 		

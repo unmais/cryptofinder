@@ -2,12 +2,12 @@ package org.instrumenteddreams.cryptofinder.coin.impl.coingecko;
 
 import java.util.List;
 
-import org.instrumenteddreams.cryptofinder.coin.CoinResources;
+import org.instrumenteddreams.cryptofinder.coin.CFCoinResources;
 
 import com.litesoftwares.coingecko.domain.Coins.CoinData.Links;
 import com.litesoftwares.coingecko.domain.Coins.CoinData.ReposUrl;
 
-public class CGCoinResources implements CoinResources {
+public class CGCoinResources implements CFCoinResources {
 
 	private final Links delegate;
 

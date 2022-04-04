@@ -2,7 +2,7 @@ package org.instrumenteddreams.cryptofinder.coin;
 
 import java.time.temporal.ChronoUnit;
 
-public enum CoinStandardPeriod {
+public enum CFCoinStandardPeriod {
 
 	PERIOD_1H("1h", 1, ChronoUnit.HOURS), PERIOD_24H("24h", 24, ChronoUnit.HOURS), PERIOD_7D("7d", 7, ChronoUnit.DAYS),
 	PERIOD_14d("14d", 14, ChronoUnit.DAYS), PERIOD_30D("30d", 30, ChronoUnit.DAYS),
@@ -12,7 +12,7 @@ public enum CoinStandardPeriod {
 	private final int duration;
 	private final ChronoUnit timeUnit;
 
-	private CoinStandardPeriod(String string, int duration, ChronoUnit timeUnit) {
+	private CFCoinStandardPeriod(String string, int duration, ChronoUnit timeUnit) {
 
 		this.string = string;
 		this.duration = duration;

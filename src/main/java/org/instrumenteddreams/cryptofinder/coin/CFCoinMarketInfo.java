@@ -4,7 +4,7 @@ import java.util.Map;
 
 import com.litesoftwares.coingecko.domain.Coins.CoinData.Roi;
 
-public interface CoinMarketInfo {
+public interface CFCoinMarketInfo {
 
 	Map<String, Double> getAth();
 

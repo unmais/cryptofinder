@@ -1,6 +1,6 @@
 package org.instrumenteddreams.cryptofinder.coin;
 
-public interface CoinPicture {
+public interface CFCoinPicture {
 
 	String getLarge();
 

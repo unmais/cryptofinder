@@ -2,12 +2,12 @@ package org.instrumenteddreams.cryptofinder.coin;
 
 import java.util.List;
 
-import org.instrumenteddreams.cryptofinder.coin.Coin.CoinInfoType;
+import org.instrumenteddreams.cryptofinder.coin.CFCoin.CoinInfoType;
 import org.instrumenteddreams.cryptofinder.coin.impl.coingecko.CGOracle;
 
-public class DefaultOracle implements CoinOracle {
+public class CFDefaultOracle implements CFCoinOracle {
 
-	private CoinOracle coinGeckoOracle;
+	private CFCoinOracle coinGeckoOracle;
 
 	@Override
 	public void start() {
@@ -29,13 +29,13 @@ public class DefaultOracle implements CoinOracle {
 	}
 
 	@Override
-	public Coin completeCoinInfo(Coin coin, CoinInfoType info) {
+	public CFCoin completeCoinInfo(CFCoin coin, CoinInfoType info) {
 
 		return coinGeckoOracle.completeCoinInfo(coin, info);
 	}
 
 	@Override
-	public List<Coin> getAllCoins(int pageNumber) {
+	public List<CFCoin> getAllCoins(int pageNumber) {
 
 		return coinGeckoOracle.getAllCoins(pageNumber);
 	}

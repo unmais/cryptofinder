@@ -1,6 +1,6 @@
 package org.instrumenteddreams.cryptofinder.coin;
 
-public interface CoinOtherScores {
+public interface CFCoinOtherScores {
 
 	long getAlexaRank();
 

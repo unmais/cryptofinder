@@ -1,11 +1,11 @@
 package org.instrumenteddreams.cryptofinder.coin.impl.coingecko;
 
-import org.instrumenteddreams.cryptofinder.coin.CoinIcoInfo;
+import org.instrumenteddreams.cryptofinder.coin.CFCoinIcoInfo;
 
 import com.litesoftwares.coingecko.domain.Coins.CoinData.IcoData;
 import com.litesoftwares.coingecko.domain.Coins.CoinData.Links_;
 
-public class CGCoinIcoInfo implements CoinIcoInfo {
+public class CGCoinIcoInfo implements CFCoinIcoInfo {
 
 	private final IcoData icoData;
 

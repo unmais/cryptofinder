@@ -1,6 +1,6 @@
 package org.instrumenteddreams.cryptofinder.coin;
 
-public interface CoinCommunityInfo {
+public interface CFCoinCommunityInfo {
 
 	long getFacebookLikes();
 
