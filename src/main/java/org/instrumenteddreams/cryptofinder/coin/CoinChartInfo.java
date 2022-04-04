@@ -4,7 +4,7 @@ import java.util.List;
 
 public interface CoinChartInfo {
 
-	public interface OhlcRecord {
+	interface OhlcRecord {
 
 		long getEpochTime();
 

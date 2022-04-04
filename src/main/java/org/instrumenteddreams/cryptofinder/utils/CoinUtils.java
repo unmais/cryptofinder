@@ -3,7 +3,7 @@ package org.instrumenteddreams.cryptofinder.utils;
 import java.time.LocalDateTime;
 import java.util.Optional;
 
-import org.instrumenteddreams.cryptofinder.coin.CoinBasicInfo;
+import org.instrumenteddreams.cryptofinder.coin.CoinInfoBasic;
 import org.instrumenteddreams.cryptofinder.coin.CoinStandardPeriod;
 import org.instrumenteddreams.cryptofinder.math.timeseries.UnivariateTimeSeries;
 
@@ -11,7 +11,7 @@ public class CoinUtils {
 
 	private static final short NUMBER_OF_COIN_STANDARD_PERIODS = 7;
 
-	public static UnivariateTimeSeries getStandardPriceTimeSeries(CoinBasicInfo coin) {
+	public static UnivariateTimeSeries getStandardPriceTimeSeries(CoinInfoBasic coin) {
 
 		LocalDateTime currentPriceDateTime = DateTimeUtils.parseLocalDateTime(coin.getLastUpdated());
 
@@ -45,7 +45,7 @@ public class CoinUtils {
 		return new UnivariateTimeSeries(coinTimes, coinPriceValues);
 	}
 
-	public static Optional<UnivariateTimeSeries> getStandardPriceTimeSeriesForLatestPeriod(CoinBasicInfo coin,
+	public static Optional<UnivariateTimeSeries> getStandardPriceTimeSeriesForLatestPeriod(CoinInfoBasic coin,
 			CoinStandardPeriod latestPeriod) {
 
 		UnivariateTimeSeries standardPriceTimeSeries = getStandardPriceTimeSeries(coin);
@@ -53,19 +53,19 @@ public class CoinUtils {
 		return standardPriceTimeSeries.getSubSeries(fromEpochTime);
 	}
 
-	public static long getLatestPeriodStartEpochTime(CoinBasicInfo coin, CoinStandardPeriod period) {
+	public static long getLatestPeriodStartEpochTime(CoinInfoBasic coin, CoinStandardPeriod period) {
 
 		LocalDateTime currentPriceDateTime = DateTimeUtils.parseLocalDateTime(coin.getLastUpdated());
 		return DateTimeUtils.getPeriodStartEpochTime(currentPriceDateTime, period);
 
 	}
 
-	public static long getAtlEpochTime(CoinBasicInfo coin) {
+	public static long getAtlEpochTime(CoinInfoBasic coin) {
 
 		return DateTimeUtils.parseEpochTime(coin.getAtlDate());
 	}
 
-	public static long getAthEpochTime(CoinBasicInfo coin) {
+	public static long getAthEpochTime(CoinInfoBasic coin) {
 
 		return DateTimeUtils.parseEpochTime(coin.getAthDate());
 	}

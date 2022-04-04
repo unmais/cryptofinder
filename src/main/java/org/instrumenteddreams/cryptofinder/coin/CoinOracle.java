@@ -8,16 +8,12 @@ public interface CoinOracle {
 
 	boolean isStarted();
 
-	List<CoinBasicInfo> getCoinBasicInfos(int pageNumber);
-
-	CoinOverallInfo getCoinOverallInfo(String id);
+	List<Coin> getAllCoins(int pageNumber);
 
 	void shutDown();
 
 	Coin completeCoinInfo(Coin coin, Coin.CoinInfoType info);
 
 	int getDefaultPageSize();
-
-	CoinChartInfo getCoinCharInfo(String id, int days);
 
 }

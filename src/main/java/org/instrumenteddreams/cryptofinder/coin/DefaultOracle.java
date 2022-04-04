@@ -1,13 +1,8 @@
-package org.instrumenteddreams.cryptofinder.coin.impl;
+package org.instrumenteddreams.cryptofinder.coin;
 
 import java.util.List;
 
-import org.instrumenteddreams.cryptofinder.coin.Coin;
 import org.instrumenteddreams.cryptofinder.coin.Coin.CoinInfoType;
-import org.instrumenteddreams.cryptofinder.coin.CoinBasicInfo;
-import org.instrumenteddreams.cryptofinder.coin.CoinChartInfo;
-import org.instrumenteddreams.cryptofinder.coin.CoinOracle;
-import org.instrumenteddreams.cryptofinder.coin.CoinOverallInfo;
 import org.instrumenteddreams.cryptofinder.coin.impl.coingecko.CGOracle;
 
 public class DefaultOracle implements CoinOracle {
@@ -40,27 +35,15 @@ public class DefaultOracle implements CoinOracle {
 	}
 
 	@Override
-	public List<CoinBasicInfo> getCoinBasicInfos(int pageNumber) {
+	public List<Coin> getAllCoins(int pageNumber) {
 
-		return coinGeckoOracle.getCoinBasicInfos(pageNumber);
+		return coinGeckoOracle.getAllCoins(pageNumber);
 	}
 
 	@Override
 	public int getDefaultPageSize() {
 
 		return coinGeckoOracle.getDefaultPageSize();
-	}
-
-	@Override
-	public CoinOverallInfo getCoinOverallInfo(String id) {
-
-		return coinGeckoOracle.getCoinOverallInfo(id);
-	}
-
-	@Override
-	public CoinChartInfo getCoinCharInfo(String id, int days) {
-
-		return coinGeckoOracle.getCoinCharInfo(id, days);
 	}
 
 }

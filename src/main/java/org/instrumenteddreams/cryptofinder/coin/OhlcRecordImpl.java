@@ -1,4 +1,4 @@
-package org.instrumenteddreams.cryptofinder.coin.impl;
+package org.instrumenteddreams.cryptofinder.coin;
 
 import org.instrumenteddreams.cryptofinder.coin.CoinChartInfo.OhlcRecord;
 

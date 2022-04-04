@@ -8,7 +8,7 @@ public interface Coin {
 
 	String getId();
 
-	CoinBasicInfo getCoinBasicInfo();
+	CoinInfoBasic getCoinBasicInfo();
 
 	CoinOverallInfo getCoinOverallInfo();
 

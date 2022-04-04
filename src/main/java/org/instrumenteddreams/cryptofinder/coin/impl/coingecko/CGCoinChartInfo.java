@@ -4,7 +4,7 @@ import java.util.List;
 import java.util.Objects;
 
 import org.instrumenteddreams.cryptofinder.coin.CoinChartInfo;
-import org.instrumenteddreams.cryptofinder.coin.impl.OhlcRecordImpl;
+import org.instrumenteddreams.cryptofinder.coin.OhlcRecordImpl;
 
 import com.beust.jcommander.internal.Lists;
 import com.litesoftwares.coingecko.domain.Coins.MarketChart;

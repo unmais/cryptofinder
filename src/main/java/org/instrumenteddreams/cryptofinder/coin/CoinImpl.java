@@ -1,33 +1,27 @@
-package org.instrumenteddreams.cryptofinder.coin.impl;
-
-import org.instrumenteddreams.cryptofinder.coin.Coin;
-import org.instrumenteddreams.cryptofinder.coin.CoinBasicInfo;
-import org.instrumenteddreams.cryptofinder.coin.CoinChartInfo;
-import org.instrumenteddreams.cryptofinder.coin.CoinMarketInfo;
-import org.instrumenteddreams.cryptofinder.coin.CoinOverallInfo;
+package org.instrumenteddreams.cryptofinder.coin;
 
 public class CoinImpl implements Coin {
 
-	private CoinBasicInfo coinBasicInfo;
+	private CoinInfoBasic coinBasicInfo;
 	private CoinOverallInfo coinOverallInfo;
 	private CoinMarketInfo coinMarketInfo;
 	private CoinChartInfo coinChartInfo;
 
 	private final String id;
 
-	public CoinImpl(CoinBasicInfo coinBasicInfo) {
+	public CoinImpl(CoinInfoBasic coinBasicInfo) {
 
 		this.id = coinBasicInfo.getId();
 		this.coinBasicInfo = coinBasicInfo;
 	}
 
 	@Override
-	public CoinBasicInfo getCoinBasicInfo() {
+	public CoinInfoBasic getCoinBasicInfo() {
 
 		return coinBasicInfo;
 	}
 
-	public void setCoinBasicInfo(CoinBasicInfo coinBasicInfo) {
+	public void setCoinBasicInfo(CoinInfoBasic coinBasicInfo) {
 
 		this.coinBasicInfo = coinBasicInfo;
 	}

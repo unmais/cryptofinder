@@ -6,8 +6,8 @@ import java.util.stream.Collectors;
 
 import org.instrumenteddreams.cryptofinder.coin.Coin;
 import org.instrumenteddreams.cryptofinder.coin.Coin.CoinInfoType;
-import org.instrumenteddreams.cryptofinder.coin.CoinBasicInfo;
 import org.instrumenteddreams.cryptofinder.coin.CoinChartInfo;
+import org.instrumenteddreams.cryptofinder.coin.CoinImpl;
 import org.instrumenteddreams.cryptofinder.coin.CoinOracle;
 import org.instrumenteddreams.cryptofinder.coin.CoinOverallInfo;
 import org.instrumenteddreams.cryptofinder.coin.CoinStandardPeriod;
@@ -52,55 +52,10 @@ public class CGOracle implements CoinOracle {
 	}
 
 	@Override
-	public List<CoinBasicInfo> getCoinBasicInfos(int pageNumber) {
+	public List<Coin> getAllCoins(int pageNumber) {
 
 		return getCoinBasicInfos(Currency.USD, null, null, null, COINS_LIST_PAGE_SIZE, pageNumber, false,
 				ALL_COIN_STANDARD_PERIODS);
-	}
-
-	@Override
-	public CoinOverallInfo getCoinOverallInfo(String id) {
-
-		return getCoinOverallInfo(id, true, true, true, true, true, true);
-	}
-
-	@Override
-	public CoinChartInfo getCoinCharInfo(String id, int days) {
-
-		if (days != CHAR_RANGE_IN_DAYS) {
-			throw new IllegalArgumentException("only " + CHAR_RANGE_IN_DAYS + " days ranges supported");
-		}
-
-		waitIfNeeded();
-		MarketChart chartData = coinGeckoClient.getCoinMarketChartById(id, Currency.USD, days,
-				CHAR_SAMPLING_FREQUENCY_DAILY);
-		setLastRequestTime();
-
-		waitIfNeeded();
-		OhlcSample[] ohlcData = coinGeckoClient.getCoinOhlcById(id, Currency.USD, days);
-		setLastRequestTime();
-
-		return CGCoinChartInfo.fromChartData(chartData, ohlcData, days);
-	}
-
-	public List<CoinBasicInfo> getCoinBasicInfos(String vsCurrency, String ids, String category, String order,
-			Integer perPage, Integer page, boolean sparkline, String priceChangePercentage) {
-
-		waitIfNeeded();
-		List<CoinMarkets> coinMarkets = coinGeckoClient.getCoinMarkets(vsCurrency, ids, category, order, perPage, page,
-				sparkline, priceChangePercentage);
-		setLastRequestTime();
-		return coinMarkets.stream().map(coinMarket -> new CGCoinBasicInfo(coinMarket)).collect(Collectors.toList());
-	}
-
-	public CoinOverallInfo getCoinOverallInfo(String id, boolean localization, boolean tickers, boolean marketData,
-			boolean communityData, boolean developerData, boolean sparkline) {
-
-		waitIfNeeded();
-		CoinFullData conFullData = coinGeckoClient.getCoinById(id, localization, tickers, marketData, communityData,
-				developerData, sparkline);
-		setLastRequestTime();
-		return new CGOCoinOverallInfo(conFullData);
 	}
 
 	@Override
@@ -139,7 +94,7 @@ public class CGOracle implements CoinOracle {
 			if (coin.getCoinChartInfo() != null) {
 				return coin;
 			}
-			CoinChartInfo chartInfo = getCoinCharInfo(coin.getId(), CHAR_RANGE_IN_DAYS);
+			CoinChartInfo chartInfo = getCoinChartInfo(coin.getId(), CHAR_RANGE_IN_DAYS);
 			coin.setCoinChartInfo(chartInfo);
 			return coin;
 		}
@@ -169,6 +124,50 @@ public class CGOracle implements CoinOracle {
 	private void setLastRequestTime() {
 
 		lastRequestTime.set(System.currentTimeMillis());
+	}
+
+	private CoinOverallInfo getCoinOverallInfo(String id) {
+
+		return getCoinOverallInfo(id, true, true, true, true, true, true);
+	}
+
+	private CoinChartInfo getCoinChartInfo(String id, int days) {
+
+		if (days != CHAR_RANGE_IN_DAYS) {
+			throw new IllegalArgumentException("only " + CHAR_RANGE_IN_DAYS + " days ranges supported");
+		}
+
+		waitIfNeeded();
+		MarketChart chartData = coinGeckoClient.getCoinMarketChartById(id, Currency.USD, days,
+				CHAR_SAMPLING_FREQUENCY_DAILY);
+		setLastRequestTime();
+
+		waitIfNeeded();
+		OhlcSample[] ohlcData = coinGeckoClient.getCoinOhlcById(id, Currency.USD, days);
+		setLastRequestTime();
+
+		return CGCoinChartInfo.fromChartData(chartData, ohlcData, days);
+	}
+
+	private CoinOverallInfo getCoinOverallInfo(String id, boolean localization, boolean tickers, boolean marketData,
+			boolean communityData, boolean developerData, boolean sparkline) {
+
+		waitIfNeeded();
+		CoinFullData conFullData = coinGeckoClient.getCoinById(id, localization, tickers, marketData, communityData,
+				developerData, sparkline);
+		setLastRequestTime();
+		return new CGOCoinOverallInfo(conFullData);
+	}
+
+	private List<Coin> getCoinBasicInfos(String vsCurrency, String ids, String category, String order, Integer perPage,
+			Integer page, boolean sparkline, String priceChangePercentage) {
+
+		waitIfNeeded();
+		List<CoinMarkets> coinMarkets = coinGeckoClient.getCoinMarkets(vsCurrency, ids, category, order, perPage, page,
+				sparkline, priceChangePercentage);
+		setLastRequestTime();
+		return coinMarkets.stream().map(coinMarket -> new CGCoinBasicInfo(coinMarket))
+				.map(coinInfo -> new CoinImpl(coinInfo)).collect(Collectors.toList());
 	}
 
 }
